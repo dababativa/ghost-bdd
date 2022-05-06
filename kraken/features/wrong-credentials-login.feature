@@ -1,4 +1,4 @@
-Feature: Iniciar Sesion
+Feature: Iniciar Sesion con credenciales equivocadas
 
 #@user2 @web
 #Scenario: Como ususario inicio sesion en el admin de ghost con la contraseña equivocada

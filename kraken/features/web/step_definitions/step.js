@@ -50,3 +50,33 @@ Then("I send the message", async function () {
 
   return await element.click();
 });
+
+Then('I click tags', async function () {
+  let element = await this.driver.$('#ember29');
+  return await element.click();
+})
+
+Then('I click create tag', async function () {
+  let element = await this.driver.$('#ember71');
+  return await element.click();
+})
+
+Then('I type tag name {string}', async function (tagName) {
+  let element = await this.driver.$('#tag-name');
+  return await element.setValue(tagName);
+})
+
+Then('I type tag slug {string}', async function (tagSlug) {
+  let element = await this.driver.$('#tag-slug');
+  return await element.setValue(tagSlug);
+})
+
+Then('I type tag description {string}', async function (tagDescription) {
+  let element = await this.driver.$('#tag-description');
+  return await element.setValue(tagDescription);
+})
+
+Then('I click save tag', async function () {
+  let element = await this.driver.$('button.gh-btn.gh-btn-primary.gh-btn-icon.ember-view');
+  return await element.click();
+})
