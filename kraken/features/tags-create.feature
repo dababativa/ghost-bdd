@@ -1,7 +1,7 @@
 Feature: Crear tag
 
 @user1 @web
-Scenario: Como ususario entro a los tags del admin de ghost
+Scenario: Como ususario entro y creo un tag
   Given I navigate to page "http://localhost:2368/ghost/#/signin"
   And I wait for 5 seconds
   When I enter email "<USERNAME1>"
