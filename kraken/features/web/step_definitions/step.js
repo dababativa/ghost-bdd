@@ -85,3 +85,18 @@ Then('I open the tag with slug {string}', async function (slug) {
   let element = await this.driver.$(`a[href="#/tags/${slug}/"]`);
   return await element.click();
 })
+
+Then('I click delete current tag', async function () {
+  let element = await this.driver.$('button.gh-btn.gh-btn-red.gh-btn-icon');
+  return await element.click();
+})
+
+Then('I cancel deleting tag', async function () {
+  let element = await this.driver.$('button.gh-btn');
+  return await element.click();
+})
+
+Then('I confirm deleting tag', async function () {
+  let element = await this.driver.$('button.gh-btn.gh-btn-red.gh-btn-icon.ember-view');
+  return await element.click();
+})
