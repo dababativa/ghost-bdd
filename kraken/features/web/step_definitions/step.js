@@ -100,3 +100,8 @@ Then('I confirm deleting tag', async function () {
   let element = await this.driver.$('button.gh-btn.gh-btn-red.gh-btn-icon.ember-view');
   return await element.click();
 })
+
+Then('I click internal tags', async function () {
+  let element = await this.driver.$('div.gh-contentfilter.gh-btn-group button.gh-btn');
+  return await element.click();
+})

@@ -10,4 +10,3 @@ Scenario: Como ususario inicio sesion en el admin de ghost
   And I wait for 2 seconds
   And I click next
   And I wait for 7 seconds
-
