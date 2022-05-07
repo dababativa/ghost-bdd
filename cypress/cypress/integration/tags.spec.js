@@ -12,6 +12,7 @@ describe('Testing basic Angular registration', () => {
         self.adminPage.clickTagsButton();
         cy.wait(1000);
         self.tagsPage.deleteAllExistingTags();
+        cy.wait(1000);
         self.adminPage.signOut();
 
     })
@@ -87,5 +88,23 @@ describe('Testing basic Angular registration', () => {
         self.tagsPage.clickSaveTagButton();
         cy.wait(5000);
     })
+
+    it('Test create internal tag', () => {
+        self.tagsPage.clickCreateTagButton();
+        cy.wait(1000);
+        self.tagsPage.typeTagName('#Internal tag');
+        cy.wait(1000);
+        self.tagsPage.typeTagSlug('internal-slug');
+        cy.wait(1000);
+        self.tagsPage.typeTagDescription('This is the description of a new internal tag created using cypress');
+        cy.wait(1000);
+        self.tagsPage.clickSaveTagButton();
+        cy.wait(1000);
+        self.adminPage.clickTagsButton();
+        cy.wait(5000);
+        self.adminPage.navigateToInternalTags();
+    })
+
+
 
 })

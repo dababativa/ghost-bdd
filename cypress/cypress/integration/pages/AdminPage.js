@@ -17,4 +17,14 @@ export default class AdminPage {
         cy.get('a[href="#/signout/"]').click()
         cy.wait(1000)
     }
+
+    navigateToInternalTags() {
+        cy.visit('http://localhost:2368/ghost/#/tags?type=internal')
+        cy.wait(2000)
+    }
+
+    navigateToTags() {
+        cy.visit('http://localhost:2368/ghost/#/tags')
+        cy.wait(2000)
+    }
 }
