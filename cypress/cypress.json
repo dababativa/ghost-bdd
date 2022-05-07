@@ -1,1 +1,6 @@
-{}
+{
+    "projectId":"ghost-e2e-testing",
+    "env": {
+        "login_url": "http://localhost:2368/ghost/#/signin"
+    }
+}

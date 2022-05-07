@@ -105,3 +105,6 @@ dist
 
 # Kraken
 properties.json
+
+# Cypress
+cypress.env.json
