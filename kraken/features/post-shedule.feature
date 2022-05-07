@@ -1,11 +1,7 @@
 Feature: Manejo de posts
 
 @user1 @web
-<<<<<<< HEAD
 Scenario: Se programa un post
-=======
-Scenario: Se programa post
->>>>>>> 0f90e44bd0099b5d745df31f7e3a8c999b645b26
   Given I navigate to page "http://localhost:2368/ghost/#/signin"
   And I wait for 5 seconds
   When I enter email "<USERNAME1>"
