@@ -1,4 +1,4 @@
-Feature: Crear un nuevo post
+Feature: programar un post
 
 @user1 @web
 Scenario: Se crea un nuevo post
