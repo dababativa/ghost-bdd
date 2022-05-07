@@ -52,27 +52,27 @@ Then("I send the message", async function () {
 });
 
 Then('I click tags', async function () {
-  let element = await this.driver.$('#ember29');
+  let element = await this.driver.$('a[href="#/tags/"]');
   return await element.click();
 })
 
 Then('I click create tag', async function () {
-  let element = await this.driver.$('#ember71');
+  let element = await this.driver.$('a[href="#/tags/new/"]');
   return await element.click();
 })
 
 Then('I type tag name {string}', async function (tagName) {
-  let element = await this.driver.$('#tag-name');
+  let element = await this.driver.$('input[name="name"]');
   return await element.setValue(tagName);
 })
 
 Then('I type tag slug {string}', async function (tagSlug) {
-  let element = await this.driver.$('#tag-slug');
+  let element = await this.driver.$('input[name="slug"]');
   return await element.setValue(tagSlug);
 })
 
 Then('I type tag description {string}', async function (tagDescription) {
-  let element = await this.driver.$('#tag-description');
+  let element = await this.driver.$('textarea[name="description"]');
   return await element.setValue(tagDescription);
 })
 
