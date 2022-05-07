@@ -82,7 +82,7 @@ Then('I click save tag', async function () {
 })
 
 Then('I open the tag with slug {string}', async function (slug) {
-  let element = await this.driver.$(`a[href="#/tags/${slug}/"]`);
+  let element = await this.driver.$(`a[href="#/tags/${slug}/"]`).first();
   return await element.click();
 })
 
@@ -107,65 +107,65 @@ Then('I click internal tags', async function () {
 })
 
 Then('I click posts', async function () {
-    let element = await this.driver.$('a[href="#/posts/"]');
-    return await element.click();
-  })
+  let element = await this.driver.$('a[href="#/posts/"]');
+  return await element.click();
+})
 
 Then('I click new post', async function () {
-    let element = await this.driver.$('a[href="#/editor/post/"]');
-    return await element.click();
+  let element = await this.driver.$('a[href="#/editor/post/"]');
+  return await element.click();
 })
 Then('I type a title {string}', async function (titlePost) {
-    let element = await this.driver.$('textarea[placeholder="Post title"]');
-    return await element.setValue(titlePost);
-  })
-  Then('I write a body {string}', async function (titleBody) {
-    let element = await this.driver.$('div[data-placeholder="Begin writing your post..."]');
-    return await element.setValue(titleBody);
-  })
+  let element = await this.driver.$('textarea[placeholder="Post title"]');
+  return await element.setValue(titlePost);
+})
+Then('I write a body {string}', async function (titleBody) {
+  let element = await this.driver.$('div[data-placeholder="Begin writing your post..."]');
+  return await element.setValue(titleBody);
+})
 Then('I click to publish', async function () {
-    let element = await this.driver.$('.gh-publishmenu-trigger');
-    return await element.click();
+  let element = await this.driver.$('.gh-publishmenu-trigger');
+  return await element.click();
 })
 Then('I publish the post', async function () {
-    let element = await this.driver.$('.gh-publishmenu-button');
-    return await element.click();
+  let element = await this.driver.$('.gh-publishmenu-button');
+  return await element.click();
 })
 Then('I click confirm', async function () {
-    let element = await this.driver.$('.gh-btn-black');
-    return await element.click();
+  let element = await this.driver.$('.gh-btn-black');
+  return await element.click();
 })
 Then('I back to posts list', async function () {
-    let element = await this.driver.$('.gh-editor-back-button');
-    return await element.click();
+  let element = await this.driver.$('.gh-editor-back-button');
+  return await element.click();
 })
 Then('I click a post', async function () {
-    let element = await this.driver.$('.gh-post-list-title');
-    return await element.click();
+  let element = await this.driver.$('.gh-post-list-title');
+  return await element.click();
 })
 Then('I click settings', async function () {
-    let element = await this.driver.$('.settings-menu-toggle');
-    return await element.click();
+  let element = await this.driver.$('.settings-menu-toggle');
+  return await element.click();
 })
 Then('I delete the post', async function () {
-    let element = await this.driver.$('.settings-menu-delete-button');
-    return await element.click();
+  let element = await this.driver.$('.settings-menu-delete-button');
+  return await element.click();
 })
 Then('I confirm delete', async function () {
-    let element = await this.driver.$('.gh-btn-red');
-    return await element.click();
+  let element = await this.driver.$('.gh-btn-red');
+  return await element.click();
 })
 Then('I open calendar', async function () {
-    let element = await this.driver.$('.gh-date-time-picker-date ');
-    return await element.click();
+  let element = await this.driver.$('.gh-date-time-picker-date ');
+  return await element.click();
 })
 Then('I select a date', async function () {
-    let element = await this.driver.$('button[data-date="2022-05-20"]');
-    return await element.click();
+  let element = await this.driver.$('button[data-date="2022-05-20"]');
+  return await element.click();
 })
 Then('I click scheduled', async function () {
-    let element = await this.driver.$('a[href="#/posts/?type=scheduled"]');
-    return await element.click();
+  let element = await this.driver.$('a[href="#/posts/?type=scheduled"]');
+  return await element.click();
 })
 
 

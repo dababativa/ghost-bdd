@@ -10,4 +10,11 @@ export default class AdminPage {
     clickTagsButton() {
         return this.getTagsButton().click()
     }
+
+    signOut() {
+        cy.get('svg.w3.mr1.fill-darkgrey').click()
+        cy.wait(1000)
+        cy.get('a[href="#/signout/"]').click()
+        cy.wait(1000)
+    }
 }
