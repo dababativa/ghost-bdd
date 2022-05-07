@@ -21,4 +21,10 @@ export default class LoginPage {
     clickLoginButton() {
         return this.getLoginButton().click()
     }
+
+    login(email, password) {
+        this.typeEmail(email);
+        this.typePassword(password);
+        this.clickLoginButton();
+    }
 }
