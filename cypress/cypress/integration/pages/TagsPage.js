@@ -99,4 +99,12 @@ export default class TagsPage {
             });
     }
 
+    assertTagWithTagNameExists(tagName) {
+        expect(cy.get('h3').contains(tagName)).to.exist
+    }
+
+    assertTagWithTagNameToNotExist(tagName) {
+        return cy.get('h3').contains(tagName).should('not.exist');
+    }
+
 }
