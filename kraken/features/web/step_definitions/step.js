@@ -1,5 +1,5 @@
 const { Given, When, Then } = require("@cucumber/cucumber");
-
+const expect = require('chai').expect;
 // When("I enter email {kraken-string}", async function (email) {
 //   let element = await this.driver.$("#email");
 
@@ -168,4 +168,8 @@ Then('I click scheduled', async function () {
   return await element.click();
 })
 
-
+Then('I assert wrong password error message', async function () {
+  let element = await this.driver.$('p.main-error')
+  const elementText = await element.getText()
+  expect(elementText.includes("Your password is incorrect.")).to.equal(true)
+})
