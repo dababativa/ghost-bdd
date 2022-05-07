@@ -15,4 +15,15 @@ describe('Testing basic Angular registration', () => {
         cy.wait(5000)
     })
 
+    it('Test login wrong credentials', () => {
+        self.loginPage.typeEmail(Cypress.env('username'))
+        cy.wait(2000)
+        self.loginPage.typePassword(Cypress.env('wrong_password'))
+        cy.wait(2000)
+        self.loginPage.clickLoginButton()
+        cy.wait(2000)
+        cy.get('p.main-error').contains('Your password is incorrect. ').should('exist');
+        cy.wait(5000)
+    })
+
 })
