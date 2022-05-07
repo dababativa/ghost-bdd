@@ -51,7 +51,7 @@ describe('Testing basic Angular registration', () => {
         cy.wait(1000);
         self.adminPage.clickTagsButton();
         cy.wait(1000);
-        self.tagsPage.openTagWithSlug('deletable-tagslug');
+        self.tagsPage.openTagWithSlug('slug');
         cy.wait(1000);
         self.tagsPage.clickDeleteTagButton();
         cy.wait(1000);
@@ -60,6 +60,31 @@ describe('Testing basic Angular registration', () => {
         self.tagsPage.clickDeleteTagButton();
         cy.wait(1000);
         self.tagsPage.clickConfirmDeleteButton();
+        cy.wait(5000);
+    })
+
+    it('Test create edit tag', () => {
+        self.tagsPage.clickCreateTagButton();
+        cy.wait(1000);
+        self.tagsPage.typeTagName('Editable tag');
+        cy.wait(1000);
+        self.tagsPage.typeTagSlug('slug');
+        cy.wait(1000);
+        self.tagsPage.typeTagDescription('This is the description of a new tag created that will then be edited using cypress');
+        cy.wait(1000);
+        self.tagsPage.clickSaveTagButton();
+        cy.wait(1000);
+        self.adminPage.clickTagsButton();
+        cy.wait(1000);
+        self.tagsPage.openTagWithSlug('slug');
+        cy.wait(1000);
+        self.tagsPage.typeTagName('Edited tag');
+        cy.wait(1000);
+        self.tagsPage.typeTagSlug('slug');
+        cy.wait(1000);
+        self.tagsPage.typeTagDescription('This is the description of a new tag created that has been edited using cypress');
+        cy.wait(1000);
+        self.tagsPage.clickSaveTagButton();
         cy.wait(5000);
     })
 

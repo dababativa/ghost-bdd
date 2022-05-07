@@ -16,21 +16,21 @@ export default class TagsPage {
     }
 
     typeTagName(tagName) {
-        return this.getTagNameInput().type(tagName)
+        return this.getTagNameInput().type(`{selectAll}${tagName}`)
     }
     getTagSlugInput() {
         return cy.get('#tag-slug')
     }
 
     typeTagSlug(tagSlug) {
-        return this.getTagSlugInput().type(tagSlug)
+        return this.getTagSlugInput().type(`{selectAll}${tagSlug}`)
     }
     getTagDescriptionInput() {
         return cy.get('#tag-description')
     }
 
     typeTagDescription(tagDescription) {
-        return this.getTagDescriptionInput().type(tagDescription)
+        return this.getTagDescriptionInput().type(`{selectAll}${tagDescription}`)
     }
 
     getSaveTagButton() {
@@ -42,7 +42,6 @@ export default class TagsPage {
     }
 
     getTagWithSlug(slug) {
-        // cy.log(JSON.stringify(cy.get(`a[href="#/tags/${slug}/"]`)))
         return cy.get(`a[href="#/tags/${slug}/"]`).first({ log: true })
     }
 
@@ -75,20 +74,29 @@ export default class TagsPage {
     }
 
     deleteAllExistingTags() {
-        const existingTags = Cypress.$('li.gh-list-row.gh-tags-list-item').is(':empty')
-        cy.log(existingTags)
-        if (!existingTags) {
-            cy.get('li.gh-list-row.gh-tags-list-item').each((value, index, collection) => {
-                cy.log(index)
-                cy.get('li.gh-list-row.gh-tags-list-item').first().click()
-                cy.wait(1000)
-                this.clickDeleteTagButton()
-                cy.wait(1000)
-                this.clickConfirmDeleteButton()
-                cy.wait(1000)
-            })
+        cy.get('body')
+            .then($body => {
+                if ($body.find('li.gh-list-row.gh-tags-list-item').length) {
+                    return true;
+                }
 
-        }
+                return false;
+            })
+            .then(tagsExist => {
+                cy.log(tagsExist)
+                if (tagsExist) {
+                    cy.get('li.gh-list-row.gh-tags-list-item').each((value, index, collection) => {
+                        cy.log(index)
+                        cy.get('li.gh-list-row.gh-tags-list-item').first().click()
+                        cy.wait(1000)
+                        this.clickDeleteTagButton()
+                        cy.wait(1000)
+                        this.clickConfirmDeleteButton()
+                        cy.wait(1000)
+                    })
+
+                }
+            });
     }
 
 }
