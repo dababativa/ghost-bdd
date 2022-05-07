@@ -1,7 +1,7 @@
-Feature: Editar un  post
+Feature: Manejo de posts
 
 @user1 @web
-Scenario: Se crea un nuevo post
+Scenario: Se edita nuevo post
   Given I navigate to page "http://localhost:2368/ghost/#/signin"
   And I wait for 5 seconds
   When I enter email "<USERNAME1>"
