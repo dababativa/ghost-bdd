@@ -22,7 +22,7 @@ describe('Testing basic Angular registration', () => {
         cy.wait(2000)
         self.loginPage.clickLoginButton()
         cy.wait(2000)
-        cy.get('p.main-error').contains('Your password is incorrect. ').should('exist');
+        cy.get('p.main-error').contains('Your password is incorrect.').should('exist');
         cy.wait(5000)
     })
 
