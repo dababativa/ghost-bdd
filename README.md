@@ -27,7 +27,7 @@ Una vez esté en el directorio raíz del proyecto puede entrar a la carpeta de C
 cd cypress
 ```
 
-Dentro del directorio encontrará un archivo .json llamado cypress.env.example.json. En este encontrará la estructura necesaria para crear un nuevo archivo .json. En el mismo directorio cree un archivo llamado cypress.env.json, pegue el contenido del archivo previamente mencionado y remplace los valores por los correctos para realizar las pruebas en su versión local de ghost.
+Dentro del directorio encontrará un archivo .json llamado cypress.env.example.json. En este encontrará la estructura necesaria para crear un nuevo archivo .json. En el mismo directorio cree un archivo llamado cypress.env.json, pegue el contenido del archivo previamente mencionado y remplace los valores por los correctos para realizar las pruebas en su versión local de ghost. Si usando el archivo cypress.env.json no lográ ejecutar las pruebas también puede incluir esas variables directamente en el atributo "env" del archivo cypress.json.
 
 Para correr Cypress puede correr el comando
 ```
