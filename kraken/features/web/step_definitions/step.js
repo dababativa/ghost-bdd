@@ -179,3 +179,8 @@ Then('I assert tag with slug {string} does not exist', async function (slug) {
   let element = await this.driver.$(`a[href="#/tags/${slug}/"]`);
   expect(isObject(element.error)).to.equal(true);
 })
+
+Then('I assert tag with slug {string} exists', async function (slug) {
+  let element = await this.driver.$(`a[href="#/tags/${slug}/"]`);
+  expect(element.error == undefined).to.equal(true);
+})

@@ -35,4 +35,7 @@ Scenario: Como ususario entro y creo un tag y lo modifico
   And I click save tag
   And I wait for 2 seconds
   And I click tags
+  And I wait for 2 seconds
+  And I assert tag with slug "tagname2tagslug2" does not exist
+  And I assert tag with slug "tag-slug-editado" exists
   And I wait for 5 seconds
