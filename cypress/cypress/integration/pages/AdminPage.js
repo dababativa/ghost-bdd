@@ -27,4 +27,10 @@ export default class AdminPage {
         cy.visit('http://localhost:2368/ghost/#/tags')
         cy.wait(2000)
     }
+
+    navigateToPosts() {
+        cy.visit('http://localhost:2368/ghost/#/posts')
+        cy.wait(2000)
+    }
+    
 }

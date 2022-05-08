@@ -15,4 +15,13 @@ describe('Testing basic Angular registration', () => {
         cy.wait(5000)
     })
 
+    it('Test wrong user login', () => {
+        self.loginPage.typeEmail(Cypress.env('wrongUsername'))
+        cy.wait(2000)
+        self.loginPage.typePassword(Cypress.env('password'))
+        cy.wait(2000)
+        self.loginPage.clickLoginButton()
+        cy.wait(5000)
+    })
+
 })
