@@ -96,10 +96,14 @@ A continuación se detallan los escenarios de prueba para cada una de las funcio
 - Programación de post: Se crea un nuevo post pero no se prublica sino se programa con fecha de 20 de Mayo. Posterior a su programación se valida que se encuentre dentro de la lista de post programados en la pestaña "Scheduled"
 
 ### Manejo de tags 
-- Crear:
-- Editar:
-- Eliminar:
-- Asignar:
+- Crear: Se crea un nuevo tag en ghost y se valida que este aparezca en la lista
+- Editar: Se realiza la creación de un nuevo tag en ghost, posteriormente se regresa a la lsita de tags, se abré el tag, se edita y actualiza. Se valida que este tag aparezca con la información actualizada en la lista y no con la previa
+- Eliminar: Se realiza la creación de un nuevo tag en ghost. Después se busca este tag en la lista, se abre y se borra. Se valida que este ya no aparezca en la lista de los tags
+- Crear tag interno: Se realiza la creación de un tag interno y luego se revisa la lista de tags normales como los tags internos. Se valida que este tag aparezca en la lista de tags internos.
+
+**_NOTA:_** Es necesario borrar cualquier tag que haya sigo creado como parte del proceso de pruebas para que estas tengan el mejor funcionamiento. Cuando se ejecutan estas pruebs en Cypress el mismo script de pruebas se encarga de borrar todos los tags previamente, en el caso de Kraken este proceso se debe realizar manualmente.
+
+**_NOTA:_** La eliminación de tags internos presenta un bug que ha sido reportado en el repositorio con las incidencias encontradas, debido a esto el proceso de eliminiación de tags internos debe realizarse manualmente antes de cada prueba
 
 ### Manejo de páginas
 - Crear:
@@ -112,3 +116,21 @@ A continuación se detallan los escenarios de prueba para cada una de las funcio
 - Editar:
 - Eliminar:
 - Ver:
+
+## Pros & Contras Cypress
+### Pros
+- Una herramienta clara que permite utilizar conocimiento previo de otras áreas del desarrollo para la facilidad de ejecución de las pruebas
+- Sigue una estructura parecida a las pruebas unitarias en donde se tiene una etapa de preparación, una de validación y finalmente una de limpieza
+- Su documentación brinda varios ejemplos y es muy clara
+
+###
+- A veces probar casos negativos puede ser complicado
+
+## Pros y Contras Kraken
+### Pros
+- Es una herramienta versatil que permite la creación de escenarios usando la premisa Given When Then
+- Permite realizar pruebas en diferentes tipos de aplicaciones
+
+## Contras
+- Presenta errores de compatibilidad dependiendo de en cual sistema operativo se ejecuta
+- Debido a la falta de una documentación clara y ejemplos fáciles de encontrar, su desarrollo puede presentar problemas dificiles de entender
