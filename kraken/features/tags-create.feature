@@ -23,4 +23,6 @@ Scenario: Como ususario entro y creo un tag
   And I click save tag
   And I wait for 2 seconds
   And I click tags
+  And I wait for 1 seconds
+  And I assert tag with slug "tagnametagslug" exists
   And I wait for 5 seconds
