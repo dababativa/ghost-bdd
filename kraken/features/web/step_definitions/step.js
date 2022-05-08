@@ -13,13 +13,13 @@ const expect = require('chai').expect;
 //   return await element.setValue(password);
 // });
 When("I enter email {kraken-string}", async function (email) {
-  let element = await this.driver.$("#ember7");
+  let element = await this.driver.$("input.email.ember-text-field");
 
   return await element.setValue(email);
 });
 
 When("I enter password {kraken-string}", async function (password) {
-  let element = await this.driver.$("#ember9");
+  let element = await this.driver.$("input.password.ember-text-field");
 
   return await element.setValue(password);
 });
