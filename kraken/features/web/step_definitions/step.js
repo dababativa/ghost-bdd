@@ -233,3 +233,14 @@ When("I click save-member", async function () {
   return await element.click();
 });
 
+When("I click recent-member", async function () {
+  let element = await this.driver.$(".ma0.pa0.gh-members-list-name:first-child");
+  return await element.click();
+});
+
+When("I edit member-note", async function () {
+  let element = await this.driver.$("#member-note");
+  return await element.setValue('Nota editada');
+});
+
+
