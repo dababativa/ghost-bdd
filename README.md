@@ -2,6 +2,12 @@
 
 Este proyecto permite realizar pruebas desarrolladas buscando cumplir con el paradigma de pruebas BDT.
 
+Desarrollado por:
+- Felipe Leyva - d.leyvad@uniandes.edu.co
+- Maria Fernanda García - @uniandes.edu.co
+- Edward Sandoval - @uniandes.edu.co
+- Daniel Armando Babativa - da.babativa@uniandes.edu.co
+
 Para poder ejecutar estas pruebas de la mejor manera posible se recomienda cumplir con los siguientes puntos
 - Correr Ghost localmente en el puerto 2368
 - Correr la versión 4.42.0 de Ghost (para esta versión fueron diseñadas las pruebas y es posible que estas no funcionen correctmanente en otra versión)
