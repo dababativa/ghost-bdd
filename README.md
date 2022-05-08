@@ -1,5 +1,14 @@
 # Ghost BDT
 
+Este proyecto permite realizar pruebas desarrolladas buscando cumplir con el paradigma de pruebas BDT.
+
+Para poder ejecutar estas pruebas de la mejor manera posible se recomienda cumplir con los siguientes puntos
+- Correr ghost localmente en el puerto 2368
+- Correr la versión 4.42.0 (para esta versión fueron diseñadas las pruebas y es posible que estas no funcionen correctmanente en otra versión)
+- Instalar Kraken a nivel global en su máquina
+- Instalar Cypress a nivel global en su máquina
+- Crear los archivos cypress.env.json y properties.json como se indica en la guía de instalación de cada herramienta
+
 ## Guía de instalación
 Abra una consola de comandos donde desee clonar el repositorio y escriba los siguientes comandos
 
