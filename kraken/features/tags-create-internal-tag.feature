@@ -24,7 +24,8 @@ Scenario: Como ususario entro y creo un tag interno
   And I wait for 2 seconds
   And I click save tag
   And I wait for 2 seconds
-  And I click tags
-  And I wait for 2 seconds
   And I navigate to page "http://localhost:2368/ghost/#/tags"
+  And I wait for 2 seconds
+  And I navigate to page "http://localhost:2368/ghost/#/tags?type=internal"
+  And I assert tag with slug "hash-internaltagslug" exists
   And I wait for 5 seconds
