@@ -129,7 +129,7 @@ A continuación se detallan los escenarios de prueba para cada una de las funcio
 - Sigue una estructura parecida a las pruebas unitarias en donde se tiene una etapa de preparación, una de validación y finalmente una de limpieza
 - Su documentación brinda varios ejemplos y es muy clara
 
-###
+### Cons
 - A veces probar casos negativos puede ser complicado
 
 ## Pros y Contras Kraken
