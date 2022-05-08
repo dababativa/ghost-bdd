@@ -1,7 +1,7 @@
 Feature: Show Member
 
 @user1 @web
-Scenario: Como usuario inicio sesion en el admin de ghost y veo un miembro creado
+Scenario: Como usuario inicio sesion en el admin de ghost y veo un miembro creado en el sistema
    Given I navigate to page "http://localhost:2368/ghost/#/signin"
   And I wait for 5 seconds
   When I enter email "<USERNAME1>"
