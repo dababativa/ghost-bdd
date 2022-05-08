@@ -1,6 +1,6 @@
 import { LoginPage } from './pages'
 
-describe('Testing basic Angular registration', () => {
+describe('Login Functionalities', () => {
     beforeEach(() => {
         cy.visit(Cypress.env('login_url'))
         self.loginPage = new LoginPage();

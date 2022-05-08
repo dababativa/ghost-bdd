@@ -1,6 +1,6 @@
 import { AdminPage, LoginPage, TagsPage } from './pages'
 
-describe('Testing basic Angular registration', () => {
+describe('Tags functionalities', () => {
 
     before(() => {
         cy.visit(Cypress.env('login_url'))

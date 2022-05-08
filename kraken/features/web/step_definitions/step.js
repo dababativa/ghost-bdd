@@ -25,7 +25,7 @@ When("I enter password {kraken-string}", async function (password) {
 });
 
 When("I click next", async function () {
-  let element = await this.driver.$("#ember11");
+  let element = await this.driver.$("button.login.gh-btn.gh-btn-login.gh-btn-block.gh-btn-icon.js-login-button.ember-view");
 
   return await element.click();
 });
@@ -198,33 +198,33 @@ When("I click new-member", async function () {
 
 When("I enter member-name {kraken-string}", async function (name) {
   try {
-  let element = await this.driver.$("#member-name");
-  return await element.setValue(name);
-  }catch (error) {
+    let element = await this.driver.$("#member-name");
+    return await element.setValue(name);
+  } catch (error) {
   }
 });
 
 When("I enter member-email {kraken-string}", async function (email) {
   try {
-  let element = await this.driver.$("#member-email");
-  return await element.setValue(email);
-  }catch (error) {
+    let element = await this.driver.$("#member-email");
+    return await element.setValue(email);
+  } catch (error) {
   }
 });
 
 When("I enter member-labels {kraken-string}", async function (label) {
   try {
-  let element = await this.driver.$(".ember-power-select-multiple-options>.ember-power-select-trigger-multiple-input");
-  return await element.setValue(label+' labels');
-  }catch (error) {
+    let element = await this.driver.$(".ember-power-select-multiple-options>.ember-power-select-trigger-multiple-input");
+    return await element.setValue(label + ' labels');
+  } catch (error) {
   }
 });
 
 When("I enter member-note {kraken-string}", async function (label) {
   try {
-  let element = await this.driver.$("#member-note");
-  return await element.setValue(label+' notes');
-  }catch (error) {
+    let element = await this.driver.$("#member-note");
+    return await element.setValue(label + ' notes');
+  } catch (error) {
   }
 });
 
