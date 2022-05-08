@@ -184,3 +184,52 @@ Then('I assert tag with slug {string} exists', async function (slug) {
   let element = await this.driver.$(`a[href="#/tags/${slug}/"]`);
   expect(element.error == undefined).to.equal(true);
 })
+
+//members
+When("I click members", async function () {
+  let element = await this.driver.$(".relative>a[href='#/members/'].ember-view");
+  return await element.click();
+});
+
+When("I click new-member", async function () {
+  let element = await this.driver.$("a[href='#/members/new/'].ember-view.gh-btn.gh-btn-primary");
+  return await element.click();
+});
+
+When("I enter member-name {kraken-string}", async function (name) {
+  try {
+  let element = await this.driver.$("#member-name");
+  return await element.setValue(name);
+  }catch (error) {
+  }
+});
+
+When("I enter member-email {kraken-string}", async function (email) {
+  try {
+  let element = await this.driver.$("#member-email");
+  return await element.setValue(email);
+  }catch (error) {
+  }
+});
+
+When("I enter member-labels {kraken-string}", async function (label) {
+  try {
+  let element = await this.driver.$(".ember-power-select-multiple-options>.ember-power-select-trigger-multiple-input");
+  return await element.setValue(label+' labels');
+  }catch (error) {
+  }
+});
+
+When("I enter member-note {kraken-string}", async function (label) {
+  try {
+  let element = await this.driver.$("#member-note");
+  return await element.setValue(label+' notes');
+  }catch (error) {
+  }
+});
+
+When("I click save-member", async function () {
+  let element = await this.driver.$("button.gh-btn.gh-btn-primary.gh-btn-icon.ember-view");
+  return await element.click();
+});
+
