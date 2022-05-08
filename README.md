@@ -69,3 +69,46 @@ kraken-node run
 El primer comando correra kraken-node desde la nube, el segundo lo correra desde la versión instalada con npm install y el último comando lo correrá con su versión local de kraken-node.
 
 **_NOTA:_** Para usar Kraken y los comando descritos previamente es recomendado instalar globalmente kraken-node en su computadora
+
+## Descripción de funcionalidades
+
+A continuación se detallan las funcionalidades que se tomaron como base para la realización de cada uno de los escenarios para cada herramienta previamente descrita:
+- Login: Esta funcionalidad abarca todos los procesos relacionados con el login o ingreso de usuarios administradores al sistema.
+- Manejo de posts: Esta funcionalidad abarca los procesos relacionados con la administración de post dentro del sistema.
+- Manejo de tags: Esta funcionalidad abarca los procesos para gestión de tags por parte de los administradores del sistema.
+- Manejo de páginas: Esta funcionalidad abarca los procesos de gestión de páginas por parte de usuarios administradores.
+- Manejo de miembros: Esta funcionalidad está relacionada con el manejo de usuario colaboradores o miembros de la administración de la página.
+
+## Descripción de escenarios de prueba
+
+A continuación se detallan los escenarios de prueba para cada una de las funcionalidades descritas anteriormente:
+
+### Login
+- Iniciar Sesión: El usuario inicia sesión con un usuario y contraseña previamente registrado en el sistema de ghost:
+- Iniciar Sesión con usuario inexistente: Se inicia sesión en el sistema de ghost con un usuario que no se encuentra previamente registrado.
+- Iniciar Sesión con credenciales equivocadas: Se inicia sesioón con usuario existente pero con contraseña invalida.
+- Olvidé mi contraseña: Proceso para restauración de contraseña de un usuario previamente registrado.
+
+### Manejo de posts 
+- Crear post: Se genera la creación de un nuevo post en el sistema y se realiza la publicación del mismo.
+- Editar post: Se realiza la creación de un nuevo post, se publica y posterior a ello se realiza la edición del mismo realizando nuevamente su publicación.
+- Eliminar post: Se realiza la eliminación del primer post que se encuentre dentro de la lista de post existentes en su pestaña general.
+- Programación de post: Se crea un nuevo post pero no se prublica sino se programa con fecha de 20 de Mayo. Posterior a su programación se valida que se encuentre dentro de la lista de post programados en la pestaña "Scheduled"
+
+### Manejo de tags 
+- Crear:
+- Editar:
+- Eliminar:
+- Asignar:
+
+### Manejo de páginas
+- Crear:
+- Editar:
+- Eliminar:
+- Ver:
+
+### Manejo de miembros
+- Crear:
+- Editar:
+- Eliminar:
+- Ver:
