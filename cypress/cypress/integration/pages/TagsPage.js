@@ -4,7 +4,7 @@ export default class TagsPage {
     }
 
     getCreateTagButton() {
-        return cy.get('#ember71')
+        return cy.get('a[href="#/tags/new/"]').first();
     }
 
     clickCreateTagButton() {
@@ -12,21 +12,21 @@ export default class TagsPage {
     }
 
     getTagNameInput() {
-        return cy.get('#tag-name')
+        return cy.get('input[name="name"]')
     }
 
     typeTagName(tagName) {
         return this.getTagNameInput().type(`{selectAll}${tagName}`)
     }
     getTagSlugInput() {
-        return cy.get('#tag-slug')
+        return cy.get('input[name="slug"]')
     }
 
     typeTagSlug(tagSlug) {
         return this.getTagSlugInput().type(`{selectAll}${tagSlug}`)
     }
     getTagDescriptionInput() {
-        return cy.get('#tag-description')
+        return cy.get('textarea[name="description"]')
     }
 
     typeTagDescription(tagDescription) {
@@ -97,6 +97,14 @@ export default class TagsPage {
 
                 }
             });
+    }
+
+    assertTagWithTagNameExists(tagName) {
+        expect(cy.get('h3').contains(tagName)).to.exist
+    }
+
+    assertTagWithTagNameToNotExist(tagName) {
+        return cy.get('h3').contains(tagName).should('not.exist');
     }
 
 }

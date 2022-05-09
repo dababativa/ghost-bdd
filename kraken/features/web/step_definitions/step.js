@@ -1,5 +1,6 @@
 const { Given, When, Then } = require("@cucumber/cucumber");
-
+const { isObject } = require("lodash");
+const expect = require('chai').expect;
 // When("I enter email {kraken-string}", async function (email) {
 //   let element = await this.driver.$("#email");
 
@@ -12,19 +13,19 @@ const { Given, When, Then } = require("@cucumber/cucumber");
 //   return await element.setValue(password);
 // });
 When("I enter email {kraken-string}", async function (email) {
-  let element = await this.driver.$("#ember7");
+  let element = await this.driver.$("input.email.ember-text-field");
 
   return await element.setValue(email);
 });
 
 When("I enter password {kraken-string}", async function (password) {
-  let element = await this.driver.$("#ember9");
+  let element = await this.driver.$("input.password.ember-text-field");
 
   return await element.setValue(password);
 });
 
 When("I click next", async function () {
-  let element = await this.driver.$("#ember11");
+  let element = await this.driver.$("button.login.gh-btn.gh-btn-login.gh-btn-block.gh-btn-icon.js-login-button.ember-view");
 
   return await element.click();
 });
@@ -52,27 +53,27 @@ Then("I send the message", async function () {
 });
 
 Then('I click tags', async function () {
-  let element = await this.driver.$('#ember29');
+  let element = await this.driver.$('a[href="#/tags/"]');
   return await element.click();
 })
 
 Then('I click create tag', async function () {
-  let element = await this.driver.$('#ember71');
+  let element = await this.driver.$('a[href="#/tags/new/"]');
   return await element.click();
 })
 
 Then('I type tag name {string}', async function (tagName) {
-  let element = await this.driver.$('#tag-name');
+  let element = await this.driver.$('input[name="name"]');
   return await element.setValue(tagName);
 })
 
 Then('I type tag slug {string}', async function (tagSlug) {
-  let element = await this.driver.$('#tag-slug');
+  let element = await this.driver.$('input[name="slug"]');
   return await element.setValue(tagSlug);
 })
 
 Then('I type tag description {string}', async function (tagDescription) {
-  let element = await this.driver.$('#tag-description');
+  let element = await this.driver.$('textarea[name="description"]');
   return await element.setValue(tagDescription);
 })
 
@@ -82,7 +83,7 @@ Then('I click save tag', async function () {
 })
 
 Then('I open the tag with slug {string}', async function (slug) {
-  let element = await this.driver.$(`a[href="#/tags/${slug}/"]`).first();
+  let element = await this.driver.$(`a[href="#/tags/${slug}/"]`);
   return await element.click();
 })
 
@@ -198,5 +199,79 @@ Then('I assert error message {string}', async function (errorText) {
   console.log("Texto2 "+elementText);
   expect(elementText.includes(errorText)).to.equal(true);
 })
+
+Then('I assert wrong password error message', async function () {
+  let element = await this.driver.$('p.main-error')
+  const elementText = await element.getText()
+  expect(elementText.includes("Your password is incorrect.")).to.equal(true)
+})
+
+Then('I assert tag with slug {string} does not exist', async function (slug) {
+  let element = await this.driver.$(`a[href="#/tags/${slug}/"]`);
+  expect(isObject(element.error)).to.equal(true);
+})
+
+Then('I assert tag with slug {string} exists', async function (slug) {
+  let element = await this.driver.$(`a[href="#/tags/${slug}/"]`);
+  expect(element.error == undefined).to.equal(true);
+})
+
+//members
+When("I click members", async function () {
+  let element = await this.driver.$(".relative>a[href='#/members/'].ember-view");
+  return await element.click();
+});
+
+When("I click new-member", async function () {
+  let element = await this.driver.$("a[href='#/members/new/'].ember-view.gh-btn.gh-btn-primary");
+  return await element.click();
+});
+
+When("I enter member-name {kraken-string}", async function (name) {
+  try {
+    let element = await this.driver.$("#member-name");
+    return await element.setValue(name);
+  } catch (error) {
+  }
+});
+
+When("I enter member-email {kraken-string}", async function (email) {
+  try {
+    let element = await this.driver.$("#member-email");
+    return await element.setValue(email);
+  } catch (error) {
+  }
+});
+
+When("I enter member-labels {kraken-string}", async function (label) {
+  try {
+    let element = await this.driver.$(".ember-power-select-multiple-options>.ember-power-select-trigger-multiple-input");
+    return await element.setValue(label + ' labels');
+  } catch (error) {
+  }
+});
+
+When("I enter member-note {kraken-string}", async function (label) {
+  try {
+    let element = await this.driver.$("#member-note");
+    return await element.setValue(label + ' notes');
+  } catch (error) {
+  }
+});
+
+When("I click save-member", async function () {
+  let element = await this.driver.$("button.gh-btn.gh-btn-primary.gh-btn-icon.ember-view");
+  return await element.click();
+});
+
+When("I click recent-member", async function () {
+  let element = await this.driver.$(".ma0.pa0.gh-members-list-name:first-child");
+  return await element.click();
+});
+
+When("I edit member-note", async function () {
+  let element = await this.driver.$("#member-note");
+  return await element.setValue('Nota editada');
+});
 
 

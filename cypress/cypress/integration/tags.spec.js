@@ -1,6 +1,6 @@
 import { AdminPage, LoginPage, TagsPage } from './pages'
 
-describe('Testing basic Angular registration', () => {
+describe('Tags functionalities', () => {
 
     before(() => {
         cy.visit(Cypress.env('login_url'))
@@ -36,6 +36,8 @@ describe('Testing basic Angular registration', () => {
         self.tagsPage.clickSaveTagButton();
         cy.wait(1000);
         self.adminPage.clickTagsButton();
+        cy.wait(1000);
+        self.tagsPage.assertTagWithTagNameExists('New tag name');
         cy.wait(5000);
     })
 
@@ -61,7 +63,9 @@ describe('Testing basic Angular registration', () => {
         self.tagsPage.clickDeleteTagButton();
         cy.wait(1000);
         self.tagsPage.clickConfirmDeleteButton();
-        cy.wait(5000);
+        cy.wait(1000)
+        self.tagsPage.assertTagWithTagNameToNotExist('Deletable tag');
+        cy.wait(3000);
     })
 
     it('Test create edit tag', () => {
@@ -86,6 +90,11 @@ describe('Testing basic Angular registration', () => {
         self.tagsPage.typeTagDescription('This is the description of a new tag created that has been edited using cypress');
         cy.wait(1000);
         self.tagsPage.clickSaveTagButton();
+        cy.wait(1000);
+        self.adminPage.clickTagsButton();
+        cy.wait(1000);
+        self.tagsPage.assertTagWithTagNameToNotExist('Editable tag');
+        self.tagsPage.assertTagWithTagNameExists('Edited tag');
         cy.wait(5000);
     })
 
@@ -101,8 +110,10 @@ describe('Testing basic Angular registration', () => {
         self.tagsPage.clickSaveTagButton();
         cy.wait(1000);
         self.adminPage.clickTagsButton();
-        cy.wait(5000);
+        cy.wait(1000);
         self.adminPage.navigateToInternalTags();
+        self.tagsPage.assertTagWithTagNameExists('#Internal tag');
+        cy.wait(5000);
     })
 
 

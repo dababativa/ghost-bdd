@@ -34,3 +34,4 @@ Scenario: Como ususario entro y creo un tag y lo elimino
   And I wait for 2 seconds
   And I confirm deleting tag
   And I wait for 5 seconds
+  And I assert tag with slug "eliminareliminar" does not exist
