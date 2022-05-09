@@ -112,16 +112,16 @@ A continuación se detallan los escenarios de prueba para cada una de las funcio
 **_NOTA:_** La eliminación de tags internos presenta un bug que ha sido reportado en el repositorio con las incidencias encontradas, debido a esto el proceso de eliminiación de tags internos debe realizarse manualmente antes de cada prueba
 
 ### Manejo de páginas
-- Crear:
-- Editar:
+- Crear: 
+- Editar: 
 - Eliminar:
 - Ver:
 
 ### Manejo de miembros
-- Crear:
-- Editar:
-- Eliminar:
-- Ver:
+- Crear: Se genera la creación de un nuevo miembro en el sistema y guarda la información para que quede publicado.
+- Editar: Se realiza la creación de un nuevo miembro, se guarda y posteriormente se realiza edita la información y se guarda de nuevo para que quede publicado.
+- Eliminar: Se realiza la creación de un nuevo miembro. Después se busca este miembro en la lista, se abre y se elimina. Se valida que el miembro ya no aparezca en la lista de los miembros.
+- Ver: Se realiza la creación de un nuevo miembro. Después se busca este miembro en la lista y se accede a su información.
 
 ## Pros & Contras Cypress
 ### Pros
