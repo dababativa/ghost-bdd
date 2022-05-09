@@ -91,4 +91,10 @@ export default class PostPage {
     clickShedulePost() {
         return this.getShedulePost().click()
     }
+    getPost(){
+        return cy.get('.gh-content-entry-title')
+    }
+    assertPostExists(postTitle){
+        expect(this.getPost().contains(postTitle)).to.exist  
+    }
 }

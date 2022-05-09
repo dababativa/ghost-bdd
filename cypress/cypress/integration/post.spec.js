@@ -41,6 +41,8 @@ describe('Testing posts Managements', () => {
         self.postPage.clickConfirmPublishPostButton();
         cy.wait(1000);
         self.postPage.clickBackToPostsButton();
+        cy.wait(1000);
+        self.postPage.assertPostExists('Test 1 - Post');
         cy.wait(5000);
     })
 
@@ -79,6 +81,10 @@ describe('Testing posts Managements', () => {
         self.postPage.clickPublishPostOptionButton();
         cy.wait(1000);
         self.postPage.clickPublishPostButton();
+        cy.wait(1000);
+        self.postPage.clickBackToPostsButton();
+        cy.wait(1000);
+        self.postPage.assertPostExists('Test 3 - Edites post');
         cy.wait(5000);
     })
 
@@ -102,6 +108,8 @@ describe('Testing posts Managements', () => {
         self.postPage.clickBackToPostsButton();
         cy.wait(1000);
         self.postPage.clickShedulePost();
+        cy.wait(1000);
+        self.postPage.assertPostExists('Test 4 - Post');
         cy.wait(5000);
     })
 })
