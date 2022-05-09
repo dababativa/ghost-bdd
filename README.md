@@ -2,9 +2,15 @@
 
 Este proyecto permite realizar pruebas desarrolladas buscando cumplir con el paradigma de pruebas BDT.
 
+Desarrollado por:
+- Felipe Leyva - d.leyvad@uniandes.edu.co
+- Maria Fernanda García - @uniandes.edu.co
+- Edward Sandoval - e.sandovalh@uniandes.edu.co
+- Daniel Armando Babativa - da.babativa@uniandes.edu.co
+
 Para poder ejecutar estas pruebas de la mejor manera posible se recomienda cumplir con los siguientes puntos
 - Correr Ghost localmente en el puerto 2368
-- Correr la versión 4.42.0 de Ghost (para esta versión fueron diseñadas las pruebas y es posible que estas no funcionen correctmanente en otra versión)
+- Correr la versión 4.42.0 de Ghost (para esta versión fueron diseñadas las pruebas y es posible que estas no funcionen correctamente en otra versión)
 - Instalar Kraken a nivel global en su máquina
 - Instalar Cypress a nivel global en su máquina
 - Crear los archivos cypress.env.json y properties.json como se indica en la guía de instalación de cada herramienta
@@ -95,8 +101,6 @@ A continuación se detallan los escenarios de prueba para cada una de las funcio
 - Eliminar post: Se realiza la eliminación del primer post que se encuentre dentro de la lista de post existentes en su pestaña general.
 - Programación de post: Se crea un nuevo post pero no se prublica sino se programa con fecha de 20 de Mayo. Posterior a su programación se valida que se encuentre dentro de la lista de post programados en la pestaña "Scheduled"
 
-**_NOTA:_** Es necesario la generación de la variable de entorno WRONG_USER para la prueba de usuario incorrecto
-
 ### Manejo de tags 
 - Crear: Se crea un nuevo tag en ghost y se valida que este aparezca en la lista
 - Editar: Se realiza la creación de un nuevo tag en ghost, posteriormente se regresa a la lsita de tags, se abré el tag, se edita y actualiza. Se valida que este tag aparezca con la información actualizada en la lista y no con la previa
@@ -108,31 +112,37 @@ A continuación se detallan los escenarios de prueba para cada una de las funcio
 **_NOTA:_** La eliminación de tags internos presenta un bug que ha sido reportado en el repositorio con las incidencias encontradas, debido a esto el proceso de eliminiación de tags internos debe realizarse manualmente antes de cada prueba
 
 ### Manejo de páginas
-- Crear:
-- Editar:
+- Crear: 
+- Editar: 
 - Eliminar:
 - Ver:
 
 ### Manejo de miembros
-- Crear:
-- Editar:
-- Eliminar:
-- Ver:
+- Crear: Se genera la creación de un nuevo miembro en el sistema y guarda la información para que quede publicado.
+- Editar: Se realiza la creación de un nuevo miembro, se guarda y posteriormente se realiza edita la información y se guarda de nuevo para que quede publicado.
+- Eliminar: Se realiza la creación de un nuevo miembro. Después se busca este miembro en la lista, se abre y se elimina. Se valida que el miembro ya no aparezca en la lista de los miembros.
+- Ver: Se realiza la creación de un nuevo miembro. Después se busca este miembro en la lista y se accede a su información.
 
 ## Pros & Contras Cypress
 ### Pros
 - Una herramienta clara que permite utilizar conocimiento previo de otras áreas del desarrollo para la facilidad de ejecución de las pruebas
 - Sigue una estructura parecida a las pruebas unitarias en donde se tiene una etapa de preparación, una de validación y finalmente una de limpieza
 - Su documentación brinda varios ejemplos y es muy clara
+- Es muy intuitivo y la velocidad en que realiza las pruebas es muy buena
 
-###
+### Cons
 - A veces probar casos negativos puede ser complicado
+- La descripción de algunos issues no es clara y es muy genérica otras veces
+- Hace falta un mejor manejo de excepciones
 
 ## Pros y Contras Kraken
 ### Pros
 - Es una herramienta versatil que permite la creación de escenarios usando la premisa Given When Then
 - Permite realizar pruebas en diferentes tipos de aplicaciones
+- Es multiplataforma y tiene buen soporte para móviles
 
 ## Contras
 - Presenta errores de compatibilidad dependiendo de en cual sistema operativo se ejecuta
 - Debido a la falta de una documentación clara y ejemplos fáciles de encontrar, su desarrollo puede presentar problemas dificiles de entender
+- Aunque usa WebdriverIO, no todas las funciones son soportadas completamente
+- Hace falta un foro o más espacios de soporte
