@@ -4,7 +4,7 @@ Este proyecto permite realizar pruebas desarrolladas buscando cumplir con el par
 
 Desarrollado por:
 - Felipe Leyva - d.leyvad@uniandes.edu.co
-- Maria Fernanda García - @uniandes.edu.co
+- Maria Fernanda García - mf.garciam1@uniandes.edu.co
 - Edward Sandoval - e.sandovalh@uniandes.edu.co
 - Daniel Armando Babativa - da.babativa@uniandes.edu.co
 
@@ -131,6 +131,7 @@ A continuación se detallan los escenarios de prueba para cada una de las funcio
 - Sigue una estructura parecida a las pruebas unitarias en donde se tiene una etapa de preparación, una de validación y finalmente una de limpieza
 - Su documentación brinda varios ejemplos y es muy clara
 - Es muy intuitivo y la velocidad en que realiza las pruebas es muy buena
+- Su sintaxis es bastante clara para la realización de las pruebas lo que ayuda a que sea facil escibirlas
 
 ### Cons
 - A veces probar casos negativos puede ser complicado
@@ -148,3 +149,4 @@ A continuación se detallan los escenarios de prueba para cada una de las funcio
 - Debido a la falta de una documentación clara y ejemplos fáciles de encontrar, su desarrollo puede presentar problemas dificiles de entender
 - Aunque usa WebdriverIO, no todas las funciones son soportadas completamente
 - Hace falta un foro o más espacios de soporte
+- Su sintaxis genera inconsistencias ya que dada la falta de documentación no es facil detectar en que punto la prueba puede estar mal escrita o si falta alguna dependencia o librería para ejecutar
