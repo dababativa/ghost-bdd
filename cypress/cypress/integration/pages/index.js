@@ -1,6 +1,6 @@
 import AdminPage from "./AdminPage";
 import LoginPage from "./LoginPage";
 import TagsPage from "./TagsPage";
-import PostPage from "./PostPage";
+import PagesPage from "./PagesPage";
 
-export { AdminPage, LoginPage, TagsPage,PostPage };
+export { AdminPage, LoginPage, TagsPage, PagesPage };

@@ -128,15 +128,21 @@ A continuación se detallan los escenarios de prueba para cada una de las funcio
 - Una herramienta clara que permite utilizar conocimiento previo de otras áreas del desarrollo para la facilidad de ejecución de las pruebas
 - Sigue una estructura parecida a las pruebas unitarias en donde se tiene una etapa de preparación, una de validación y finalmente una de limpieza
 - Su documentación brinda varios ejemplos y es muy clara
+- Es muy intuitivo y la velocidad en que realiza las pruebas es muy buena
 
 ### Cons
 - A veces probar casos negativos puede ser complicado
+- La descripción de algunos issues no es clara y es muy genérica otras veces
+- Hace falta un mejor manejo de excepciones
 
 ## Pros y Contras Kraken
 ### Pros
 - Es una herramienta versatil que permite la creación de escenarios usando la premisa Given When Then
 - Permite realizar pruebas en diferentes tipos de aplicaciones
+- Es multiplataforma y tiene buen soporte para móviles
 
 ## Contras
 - Presenta errores de compatibilidad dependiendo de en cual sistema operativo se ejecuta
 - Debido a la falta de una documentación clara y ejemplos fáciles de encontrar, su desarrollo puede presentar problemas dificiles de entender
+- Aunque usa WebdriverIO, no todas las funciones son soportadas completamente
+- Hace falta un foro o más espacios de soporte
