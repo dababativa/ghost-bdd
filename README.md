@@ -4,8 +4,8 @@ Este proyecto permite realizar pruebas desarrolladas buscando cumplir con el par
 
 Desarrollado por:
 - Felipe Leyva - d.leyvad@uniandes.edu.co
-- Maria Fernanda García - e.sandovalh@uniandes.edu.co
-- Edward Sandoval - @uniandes.edu.co
+- Maria Fernanda García - @uniandes.edu.co
+- Edward Sandoval - e.sandovalh@uniandes.edu.co
 - Daniel Armando Babativa - da.babativa@uniandes.edu.co
 
 Para poder ejecutar estas pruebas de la mejor manera posible se recomienda cumplir con los siguientes puntos
