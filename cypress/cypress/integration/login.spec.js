@@ -16,14 +16,14 @@ describe('Login Functionalities', () => {
     })
 
     it('Test wrong user login', () => {
-        self.loginPage.typeEmail(Cypress.env('wrongUsername'))
+        self.loginPage.typeEmail(Cypress.env('wrong_user'))
         cy.wait(2000)
-        self.loginPage.typePassword(Cypress.env('password'))
+        self.loginPage.typePassword(Cypress.env('wrong_password'))
         cy.wait(2000)
         self.loginPage.clickLoginButton()
     })
     it('Test login wrong credentials', () => {
-        self.loginPage.typeEmail(Cypress.env('username'))
+        self.loginPage.typeEmail(Cypress.env('wrong_user'))
         cy.wait(2000)
         self.loginPage.typePassword(Cypress.env('wrong_password'))
         cy.wait(2000)
