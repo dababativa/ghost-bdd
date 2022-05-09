@@ -95,6 +95,8 @@ A continuación se detallan los escenarios de prueba para cada una de las funcio
 - Eliminar post: Se realiza la eliminación del primer post que se encuentre dentro de la lista de post existentes en su pestaña general.
 - Programación de post: Se crea un nuevo post pero no se prublica sino se programa con fecha de 20 de Mayo. Posterior a su programación se valida que se encuentre dentro de la lista de post programados en la pestaña "Scheduled"
 
+**_NOTA:_** Es necesario la generación de la variable de entorno WRONG_USER para la prueba de usuario incorrecto
+
 ### Manejo de tags 
 - Crear: Se crea un nuevo tag en ghost y se valida que este aparezca en la lista
 - Editar: Se realiza la creación de un nuevo tag en ghost, posteriormente se regresa a la lsita de tags, se abré el tag, se edita y actualiza. Se valida que este tag aparezca con la información actualizada en la lista y no con la previa
