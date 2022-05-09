@@ -112,10 +112,12 @@ A continuación se detallan los escenarios de prueba para cada una de las funcio
 **_NOTA:_** La eliminación de tags internos presenta un bug que ha sido reportado en el repositorio con las incidencias encontradas, debido a esto el proceso de eliminiación de tags internos debe realizarse manualmente antes de cada prueba
 
 ### Manejo de páginas
-- Crear: 
-- Editar: 
-- Eliminar:
-- Ver:
+- Crear: Se crea una nueva página en ghost y se corrobora que aparezca en el listado de páginas.
+- Editar: Se crea una nueva página en ghost, luego a partir de la lista de páginas, se selecciona la página, se edita y actualiza. Se hace la respectiva validación de que la página aparezca en la lista con la nueva información.
+- Eliminar: Se crea una nueva página en ghost. Después, se busca la página en la lista, se abre y se elimina. Se corrobora que esta ya no aparezca en la lista de páginas.
+- Despublicar una página (pasa a borrador o draft): Se crea una nueva página en ghost. Después, se busca la página en la lista, se abre y se despublica. En la lista se verifica que ahora tenga estado borrador o draft (es el estado que toma una página cuando se despublica)
+
+**_NOTA:_** Es necesario borrar cualquier página que haya sido creada como parte del proceso de pruebas para que estas tengan el mejor funcionamiento. Este proceso se dene ejecutar de manera manual.
 
 ### Manejo de miembros
 - Crear: Se genera la creación de un nuevo miembro en el sistema y guarda la información para que quede publicado.
