@@ -1,4 +1,4 @@
-Feature: Manejo de posts
+Feature: Crear un nuevo post
 
 @user1 @web
 Scenario: Se crea un nuevo post
@@ -25,4 +25,7 @@ Scenario: Se crea un nuevo post
   And I click confirm
   And I wait for 2 seconds
   And I back to posts list
+  And I wait for 2 seconds
+  And I navigate to page "http://localhost:2368/Post-de-prueba-1"
+  And I assert post with title "Post de prueba 1" exists
   And I wait for 5 seconds

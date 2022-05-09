@@ -1,7 +1,7 @@
-Feature: Manejo de posts
+Feature: Eliminar un post
 
 @user1 @web
-Scenario: Se elimina un post
+Scenario: Se crea un nuevo post
   Given I navigate to page "http://localhost:2368/ghost/#/signin"
   And I wait for 5 seconds
   When I enter email "<USERNAME1>"
@@ -12,6 +12,20 @@ Scenario: Se elimina un post
   Then I wait for 7 seconds
   And I click posts
   And I wait for 2 seconds
+  And I click new post
+  And I wait for 2 seconds
+  And I type a title "Post de prueba 6"
+  And I wait for 2 seconds
+  And I write a body "Body de prueba"
+  And I wait for 2 seconds
+  And I click to publish
+  And I wait for 2 seconds
+  And I publish the post
+  And I wait for 2 seconds
+  And I click confirm
+  And I wait for 2 seconds
+  And I back to posts list
+  And I wait for 2 seconds
   And I click a post
   And I wait for 2 seconds  
   And I click settings
@@ -19,4 +33,8 @@ Scenario: Se elimina un post
   And I delete the post
   And I wait for 2 seconds  
   And I confirm delete
+  And I wait for 2 seconds
+  And I navigate to page "http://localhost:2368/Post-de-prueba-6"
+  And I wait for 2 seconds
+  And I assert post does no exist
   And I wait for 5 seconds
