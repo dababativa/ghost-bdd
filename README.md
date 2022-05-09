@@ -133,7 +133,7 @@ A continuación se detallan los escenarios de prueba para cada una de las funcio
 - Es muy intuitivo y la velocidad en que realiza las pruebas es muy buena
 - Su sintaxis es bastante clara para la realización de las pruebas lo que ayuda a que sea facil escibirlas
 
-### Cons
+### Contras
 - A veces probar casos negativos puede ser complicado
 - La descripción de algunos issues no es clara y es muy genérica otras veces
 - Hace falta un mejor manejo de excepciones
@@ -144,7 +144,7 @@ A continuación se detallan los escenarios de prueba para cada una de las funcio
 - Permite realizar pruebas en diferentes tipos de aplicaciones
 - Es multiplataforma y tiene buen soporte para móviles
 
-## Contras
+### Contras
 - Presenta errores de compatibilidad dependiendo de en cual sistema operativo se ejecuta
 - Debido a la falta de una documentación clara y ejemplos fáciles de encontrar, su desarrollo puede presentar problemas dificiles de entender
 - Aunque usa WebdriverIO, no todas las funciones son soportadas completamente
