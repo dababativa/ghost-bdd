@@ -243,4 +243,24 @@ When("I edit member-note", async function () {
   return await element.setValue('Nota editada');
 });
 
+When("I click member-options", async function () {
+  let element = await this.driver.$(".gh-btn.gh-btn-icon.icon-only.gh-btn-action-icon.closed.ember-view");
+  return await element.click();
+});
+
+When("I click delete-member", async function () {
+  let element = await this.driver.$("ul.dropdown.gh-member-actions-menu.dropdown-menu.dropdown-triangle-top-right.open.fade-in-scale.open.ember-view>li>button.mr2>span.red");
+  return await element.click();
+});
+
+When("I confirm delete-member", async function () {
+  let element = await this.driver.$("div.modal-footer>button.gh-btn.gh-btn-red.gh-btn-icon.ember-view");
+  return await element.click();
+});
+
+Then('I assert member eliminado {string} exists', async function (member) {
+  let element = await this.driver.$(`//p[text() = '${member}']`);
+  expect(isObject(element.error)).to.equal(true);
+});
+
 
