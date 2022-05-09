@@ -1,7 +1,7 @@
-Feature: Manejo de posts
+Feature: Editar un  post
 
 @user1 @web
-Scenario: Se edita nuevo post
+Scenario: Se crea un nuevo post
   Given I navigate to page "http://localhost:2368/ghost/#/signin"
   And I wait for 5 seconds
   When I enter email "<USERNAME1>"
@@ -21,6 +21,8 @@ Scenario: Se edita nuevo post
   And I click to publish
   And I wait for 2 seconds
   And I publish the post
+  And I wait for 2 seconds
+  And I assert post was edited with "Post de prueba 1.1"
   And I wait for 2 seconds
   And I back to posts list
   And I wait for 5 seconds

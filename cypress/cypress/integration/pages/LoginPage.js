@@ -4,13 +4,13 @@ export default class LoginPage {
     }
 
     getEmailInput() {
-        return cy.get("#ember7")
+        return cy.get("input.email.ember-text-field")
     }
     getPasswordInput() {
-        return cy.get("#ember9")
+        return cy.get("input.password.ember-text-field")
     }
     getLoginButton() {
-        return cy.get("#ember11")
+        return cy.get("button.login.gh-btn.gh-btn-login.gh-btn-block.gh-btn-icon.js-login-button.ember-view")
     }
     typeEmail(email) {
         return this.getEmailInput().type(email)

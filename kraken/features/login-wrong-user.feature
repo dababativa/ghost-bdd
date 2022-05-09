@@ -9,4 +9,6 @@ Scenario: Se incia sesion con un usuario no registrado
   And I enter password "<PASSWORD1>"
   And I wait for 2 seconds
   And I click next
+  And I wait for 2 seconds
+  And I assert error message "There is no user with that email address."
   And I wait for 7 seconds
