@@ -216,7 +216,76 @@ Then('I assert tag with slug {string} exists', async function (slug) {
   expect(element.error == undefined).to.equal(true);
 })
 
-//members
+// Pages 
+
+Then('I click on pages', async function () {
+  let element = await this.driver.$('a[href="#/pages/"]');
+  return await element.click();
+})
+
+Then('I click on new page', async function () {
+  let element = await this.driver.$('a[href="#/editor/page/"]');
+  return await element.click();
+})
+
+Then('I type a page title {string}', async function (pageTitle) {
+  let element = await this.driver.$('textarea[placeholder="Page title"]');
+  return await element.setValue(pageTitle);
+})
+
+Then('I type a page body {string}', async function (pageBody) {
+  let element = await this.driver.$('div[contentedtible="true"]');
+  return await element.setValue(pageBody);
+})
+
+Then('I click on publish menu', async function () {
+  let element = await this.driver.$('div.ember-view span');
+  return await element.click();
+})
+
+Then('I click on publish button', async function () {
+  let element = await this.driver.$('button.gh-publishmenu-button span');
+  return await element.click();
+})
+
+Then('I open the first page on the list', async function (slug) {
+  let element = await this.driver.$('li.gh-posts-list-item > a');
+  return await element.first().click();
+})
+
+Then('I click on the page menu', async function () {
+  let element = await this.driver.$('.settings-menu-toggle > span');
+  return await element.click();
+})
+
+Then('I click on the delete page button', async function () {
+  let element = await this.driver.$('button.settings-menu-delete-button');
+  return await element.click();
+})
+
+Then('I click on the confirmation delete page button', async function () {
+  let element = await this.driver.$('.gh-btn-red > span');
+  return await element.click();
+})
+
+Then('I click on the unplublish radio button', async function () {
+  let element = await this.driver.$('div.gh-publishmenu-radio-button');
+  return await element.first().click();
+})
+
+Then('I click on the unplublish radio button', async function () {
+  let element = await this.driver.$('div.gh-publishmenu-radio-button');
+  return await element.first().click();
+})
+
+Then('I assert page with title {string} exists', async function (pageTitle) {
+  let element = await this.driver.$('h1.article-title');
+  const elementText = await element.getText();
+  expect(elementText == pageTitle).to.equal(true);
+})
+
+// Members
+
 When("I click members", async function () {
   let element = await this.driver.$(".relative>a[href='#/members/'].ember-view");
   return await element.click();
