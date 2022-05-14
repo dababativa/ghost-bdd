@@ -1,4 +1,4 @@
-Feature: Show Member
+  Feature: Show Member
 
 @user1 @web
 Scenario: Como usuario inicio sesion en el admin de ghost y veo un miembro creado en el sistema
@@ -21,10 +21,16 @@ Scenario: Como usuario inicio sesion en el admin de ghost y veo un miembro cread
   And I enter member-labels "$name_1"
   And I wait for 1 seconds
   And I enter member-note "$name_1"
+  And I take member-show screenshot1
+  And I wait for 1 seconds
   And I wait for 1 seconds
   And I click save-member
   Then I wait for 5 seconds
   And I click members
+  And I take member-show screenshot2
+  And I wait for 1 seconds
   And I wait for 3 seconds
   And I click recent-member
+  And I take member-show screenshot3
+  And I wait for 1 seconds
   And I wait for 10 seconds
