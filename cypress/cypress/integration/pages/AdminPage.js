@@ -1,5 +1,8 @@
 export default class AdminPage {
-  constructor() {}
+  constructor(version, port) {
+    this.version = version;
+    this.port = port;
+  }
 
   getTagsButton() {
     return cy.get('a[href="#/tags/"]').first();
@@ -17,12 +20,12 @@ export default class AdminPage {
   }
 
   navigateToInternalTags() {
-    cy.visit("http://localhost:3001/ghost/#/tags?type=internal");
+    cy.visit(`http://localhost:${this.port}/ghost/#/tags?type=internal`);
     cy.wait(2000);
   }
 
   navigateToTags() {
-    cy.visit("http://localhost:3001/ghost/#/tags");
+    cy.visit(`http://localhost:${this.port}/ghost/#/tags`);
     cy.wait(2000);
   }
 

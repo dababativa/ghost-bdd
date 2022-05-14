@@ -1,13 +1,13 @@
 {
     "projectId":"ghost-e2e-testing",
     "env": {
-        "login_url": "http://localhost:3001/ghost/#/signin",
-        "admin_url": "http://localhost:3001/ghost/#/dashboard",
+        "login_url": "http://localhost:3002/ghost/#/signin",
+        "admin_url": "http://localhost:3002/ghost/#/dashboard",
         "username": "da.babativa@uniandes.edu.co",
         "password": "DanielArmandoBabativaAparicio",
         "wrong_password": "wrong password",
         "wrong_user": "wrong user",
-        "ghost_version": "3.42",
-        "ghost_port": "3001"
+        "ghost_version": "4.42",
+        "ghost_port": "3002"
     }
 }

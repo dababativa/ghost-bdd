@@ -4,7 +4,10 @@ describe("Tags functionalities", () => {
   before(() => {
     cy.visit(Cypress.env("login_url"));
     self.loginPage = new LoginPage();
-    self.adminPage = new AdminPage();
+    self.adminPage = new AdminPage(
+      Cypress.env("ghost_version"),
+      Cypress.env("ghost_port")
+    );
     self.tagsPage = new TagsPage(Cypress.env("ghost_version"));
     if (Cypress.env("ghost_version") == "4.42") {
       loginPage.login(Cypress.env("username"), Cypress.env("password"));
