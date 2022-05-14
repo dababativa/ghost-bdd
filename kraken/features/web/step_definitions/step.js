@@ -262,7 +262,7 @@ Then('I assert page with title {string} exists', async function (pageTitle) {
   expect(elementText == pageTitle).to.equal(true);
 })
 
-Then('I assert 404 error code with page name appears', async function () {
+Then('I assert 404 error code appears', async function () {
   let element = await this.driver.$('h1.error-code');
   const elementText = await element.getText();
   expect(elementText == '404').to.equal(true);
