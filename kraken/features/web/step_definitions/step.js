@@ -58,6 +58,7 @@ Then('I click tags', async function () {
 })
 
 Then('I click create tag', async function () {
+  await this.driver.saveScreenshot('./screenshots/tags/create-tag-initial-screen-lralen.png');
   let element = await this.driver.$('a[href="#/tags/new/"]');
   return await element.click();
 })
@@ -177,26 +178,26 @@ Then('I assert post with title {string} exists', async function (postTitle) {
 Then('I assert post does no exist', async function () {
   let element = await this.driver.$('.error-code');
   const elementText = await element.getText();
-  console.log("Texto2 "+elementText);
+  console.log("Texto2 " + elementText);
   expect(elementText.includes(404)).to.equal(true);
 })
 Then('I assert post {string} exist', async function (postTitle) {
   let element = await this.driver.$('.gh-content-entry-title=Post para programar');
   const elementText = await element.getText();
   console.log(elementText);
-  expect(postTitle==elementText).to.equal(true);
+  expect(postTitle == elementText).to.equal(true);
 })
 Then('I assert post was edited with {string}', async function (postNameNew) {
   let element = await this.driver.$('textarea[placeholder="Post title"]');
   const elementText = await element.getText();
   console.log(elementText);
-  expect(elementText==postNameNew).to.equal(false);
+  expect(elementText == postNameNew).to.equal(false);
 })
 Then('I assert error message {string}', async function (errorText) {
   let element = await this.driver.$('.main-error');
   const elementText = await element.getText();
-  console.log("Texto1 "+errorText);
-  console.log("Texto2 "+elementText);
+  console.log("Texto1 " + errorText);
+  console.log("Texto2 " + elementText);
   expect(elementText.includes(errorText)).to.equal(true);
 })
 

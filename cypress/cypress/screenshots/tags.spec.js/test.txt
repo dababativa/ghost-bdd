@@ -1,0 +1,24 @@
+
+Pendientes:
+    Semana 5:
+        Kraken - Felipe
+
+
+    Screenshots:
+        Screenshots Login Cypress
+        Screenshots Login Kraken
+        Screenshots Posts Cypress
+        Screenshots Posts Kraken
+        Screenshots Pages Kraken
+        Screenshots Pages Cypress
+        Screenshots Members Kraken
+        Screenshots Members Cypress
+        Screenshots Tags Kraken
+        Screenshots Tags Cypress
+
+
+    Regresión Visual:
+        Escenario Login - Edward
+        Escenario Posts - Mafe
+        Escenario Pages - Felipe
+        2 Escenarios Tags - Daniel
