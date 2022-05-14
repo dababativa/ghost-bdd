@@ -4,8 +4,10 @@
         "login_url": "http://localhost:3001/ghost/#/signin",
         "admin_url": "http://localhost:3001/ghost/#/dashboard",
         "username": "da.babativa@uniandes.edu.co",
-    "password": "DanielArmandoBabativaAparicio",
-    "wrong_password": "wrong password",
-    "wrong_user": "wrong user"
+        "password": "DanielArmandoBabativaAparicio",
+        "wrong_password": "wrong password",
+        "wrong_user": "wrong user",
+        "ghost_version": "3.42",
+        "ghost_port": "3001"
     }
 }
