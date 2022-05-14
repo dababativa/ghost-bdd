@@ -1,7 +1,7 @@
 Feature: Pages
 
 @user1 @web
-Scenario: Edit a page
+Scenario: Delete a created page
   Given I navigate to page "http://localhost:2368/ghost/#/signin"
   And I wait for 5 seconds
   When I enter email "<USERNAME1>"
@@ -14,9 +14,9 @@ Scenario: Edit a page
   And I wait for 2 seconds
   And I click on new page
   And I wait for 2 seconds
-  And I type a page title "Kraken Editable Page"
+  And I type a page title "Kraken Deletable Page"
   And I wait for 2 seconds
-  And I type a page body "This page is going to be created and edited by Kraken."
+  And I type a page body "This page will be deleted by Kraken."
   And I wait for 2 seconds
   And I click on publish menu
   And I wait for 2 seconds
@@ -26,18 +26,12 @@ Scenario: Edit a page
   And I wait for 2 seconds
   And I open the first page on the list
   And I wait for 2 seconds
-  And I type a page title "Kraken Edited Page"
+  And I click on the page menu
   And I wait for 2 seconds
-  And I type a page body "This a edited page by Kraken."
+  And I click on the delete page button
   And I wait for 2 seconds
-  And I click on publish menu
+  And I click on the confirmation delete page button
   And I wait for 2 seconds
-  And I click on publish button
-  And I wait for 2 seconds
-  And I click on pages
-  And I wait for 2 seconds
-  And I navigate to page "http://localhost:2368/kraken-editable-page"
-  And I assert page with title "Kraken Edited Page" exists
+  And I navigate to page "http://localhost:2368/kraken-deletable-page"
+  And I assert 404 error code with page name appears
   And I wait for 5 seconds
-
-
