@@ -17,6 +17,10 @@ Given("I am using version {kraken-string}", async function (ghostVersion) {
   version = ghostVersion;
 });
 
+Given("I navigate to ghost on port {kraken-string}", async function (port) {
+  this.driver.url(`http://localhost:${port}/ghost`);
+});
+
 When("I enter email {kraken-string}", async function (email) {
   console.log(version);
   let element = await this.driver.$("input.email.ember-text-field");
@@ -36,7 +40,8 @@ When("I take Screenshot1", async function () {
 
 When("I click next", async function () {
   let element = await this.driver.$(
-    "button.login.gh-btn.gh-btn-login.gh-btn-block.gh-btn-icon.js-login-button.ember-view"
+    // "button.login.gh-btn.gh-btn-login.gh-btn-block.gh-btn-icon.js-login-button.ember-view"
+    "button[type='submit']"
   );
 
   return await element.click();
@@ -95,10 +100,12 @@ Then("I type tag description {string}", async function (tagDescription) {
 });
 
 Then("I click save tag", async function () {
+  const selector =
+    version == 4.42
+      ? "button.gh-btn.gh-btn-primary.gh-btn-icon.ember-view"
+      : "button.gh-btn.gh-btn-blue.gh-btn-icon.ember-view";
   await this.driver.saveScreenshot("./screenshots/tags/save-tag-kraken.png");
-  let element = await this.driver.$(
-    "button.gh-btn.gh-btn-primary.gh-btn-icon.ember-view"
-  );
+  let element = await this.driver.$(selector);
   return await element.click();
 });
 
