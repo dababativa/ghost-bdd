@@ -24,10 +24,18 @@ When("I enter password {kraken-string}", async function (password) {
   return await element.setValue(password);
 });
 
+When("I take Screenshot1", async function () {
+  await this.driver.saveScreenshot('./screenshots/login/login-screen1.png');
+});
+
 When("I click next", async function () {
   let element = await this.driver.$("button.login.gh-btn.gh-btn-login.gh-btn-block.gh-btn-icon.js-login-button.ember-view");
 
   return await element.click();
+});
+
+When("I take Screenshot2", async function () {
+  await this.driver.saveScreenshot('./screenshots/login/login-screen2.png');
 });
 
 Then("I click on the first conversation", async function () {
@@ -169,37 +177,6 @@ Then('I click scheduled', async function () {
   let element = await this.driver.$('a[href="#/posts/?type=scheduled"]');
   return await element.click();
 })
-Then('I assert post with title {string} exists', async function (postTitle) {
-  let element = await this.driver.$('h1.article-title');
-  const elementText = await element.getText();
-  expect(elementText == postTitle).to.equal(true);
-})
-
-Then('I assert post does no exist', async function () {
-  let element = await this.driver.$('.error-code');
-  const elementText = await element.getText();
-  console.log("Texto2 " + elementText);
-  expect(elementText.includes(404)).to.equal(true);
-})
-Then('I assert post {string} exist', async function (postTitle) {
-  let element = await this.driver.$('.gh-content-entry-title=Post para programar');
-  const elementText = await element.getText();
-  console.log(elementText);
-  expect(postTitle == elementText).to.equal(true);
-})
-Then('I assert post was edited with {string}', async function (postNameNew) {
-  let element = await this.driver.$('textarea[placeholder="Post title"]');
-  const elementText = await element.getText();
-  console.log(elementText);
-  expect(elementText == postNameNew).to.equal(false);
-})
-Then('I assert error message {string}', async function (errorText) {
-  let element = await this.driver.$('.main-error');
-  const elementText = await element.getText();
-  console.log("Texto1 " + errorText);
-  console.log("Texto2 " + elementText);
-  expect(elementText.includes(errorText)).to.equal(true);
-})
 
 Then('I assert wrong password error message', async function () {
   let element = await this.driver.$('p.main-error')
@@ -217,10 +194,88 @@ Then('I assert tag with slug {string} exists', async function (slug) {
   expect(element.error == undefined).to.equal(true);
 })
 
+// Pages
+
+Then('I click on pages', async function () {
+  let element = await this.driver.$('a[href="#/pages/"]');
+  return await element.click();
+})
+
+Then('I click on new page', async function () {
+  let element = await this.driver.$('a[href="#/editor/page/"]');
+  return await element.click();
+})
+
+Then('I type a page title {string}', async function (pageTitle) {
+  let element = await this.driver.$('textarea[placeholder="Page title"]');
+  return await element.setValue(pageTitle);
+})
+
+Then('I type a page body {string}', async function (pageBody) {
+  let element = await this.driver.$('div[contentedtible="true"]');
+  return await element.setValue(pageBody);
+})
+
+Then('I click on publish menu', async function () {
+  let element = await this.driver.$('div.ember-view span');
+  return await element.click();
+})
+
+Then('I click on publish button', async function () {
+  let element = await this.driver.$('button.gh-publishmenu-button span');
+  return await element.click();
+})
+
+Then('I open the first page on the list', async function (slug) {
+  let element = await this.driver.$('li.gh-posts-list-item > a');
+  return await element.first().click();
+})
+
+Then('I click on the page menu', async function () {
+  let element = await this.driver.$('.settings-menu-toggle > span');
+  return await element.click();
+})
+
+Then('I click on the delete page button', async function () {
+  let element = await this.driver.$('button.settings-menu-delete-button');
+  return await element.click();
+})
+
+Then('I click on the confirmation delete page button', async function () {
+  let element = await this.driver.$('.gh-btn-red > span');
+  return await element.click();
+})
+
+Then('I click on the unplublish radio button', async function () {
+  let element = await this.driver.$('div.gh-publishmenu-radio-button');
+  return await element.first().click();
+})
+
+Then('I click on the unplublish radio button', async function () {
+  let element = await this.driver.$('div.gh-publishmenu-radio-button');
+  return await element.first().click();
+})
+
+Then('I assert page with title {string} exists', async function (pageTitle) {
+  let element = await this.driver.$('h1.article-title');
+  const elementText = await element.getText();
+  expect(elementText == pageTitle).to.equal(true);
+})
+
+Then('I assert 404 error code with page name appears', async function () {
+  let element = await this.driver.$('h1.error-code');
+  const elementText = await element.getText();
+  expect(elementText == '404').to.equal(true);
+})
+
 //members
 When("I click members", async function () {
   let element = await this.driver.$(".relative>a[href='#/members/'].ember-view");
   return await element.click();
+});
+
+When("I take member-create screenshot1", async function () {
+  await this.driver.saveScreenshot('./screenshots/member/create/list-members-screen.png');
 });
 
 When("I click new-member", async function () {
@@ -260,9 +315,17 @@ When("I enter member-note {kraken-string}", async function (label) {
   }
 });
 
+When("I take member-create screenshot2", async function () {
+  await this.driver.saveScreenshot('./screenshots/member/create/new-member-screen.png');
+});
+
 When("I click save-member", async function () {
   let element = await this.driver.$("button.gh-btn.gh-btn-primary.gh-btn-icon.ember-view");
   return await element.click();
+});
+
+When("I take member-create screenshot3", async function () {
+  await this.driver.saveScreenshot('./screenshots/member/create/new-member-created-screen.png');
 });
 
 When("I click recent-member", async function () {
@@ -290,9 +353,51 @@ When("I confirm delete-member", async function () {
   return await element.click();
 });
 
+When("I take member-edit screenshot1", async function () {
+  await this.driver.saveScreenshot('./screenshots/member/edit/new-member-screen.png');
+});
+
+When("I take member-edit screenshot2", async function () {
+  await this.driver.saveScreenshot('./screenshots/member/edit/list-member-created-screen.png');
+});
+
+When("I take member-edit screenshot3", async function () {
+  await this.driver.saveScreenshot('./screenshots/member/edit/edit-member-screen.png');
+});
+
+When("I take member-edit screenshot4", async function () {
+  await this.driver.saveScreenshot('./screenshots/member/edit/edited-member-screen.png');
+});
+
+When("I take member-delete screenshot1", async function () {
+  await this.driver.saveScreenshot('./screenshots/member/delete/new-member-screen.png');
+});
+
+When("I take member-delete screenshot2", async function () {
+  await this.driver.saveScreenshot('./screenshots/member/delete/list-member-screen.png');
+});
+
+When("I take member-delete screenshot3", async function () {
+  await this.driver.saveScreenshot('./screenshots/member/delete/delete-member-screen.png');
+});
+
+When("I take member-delete screenshot4", async function () {
+  await this.driver.saveScreenshot('./screenshots/member/delete/deleted-member-screen.png');
+});
+
+When("I take member-show screenshot1", async function () {
+  await this.driver.saveScreenshot('./screenshots/member/show/new-member-screen.png');
+});
+
+When("I take member-show screenshot2", async function () {
+  await this.driver.saveScreenshot('./screenshots/member/show/list-member-screen.png');
+});
+
+When("I take member-show screenshot3", async function () {
+  await this.driver.saveScreenshot('./screenshots/member/show/show-member-screen.png');
+});
+
 Then('I assert member eliminado {string} exists', async function (member) {
   let element = await this.driver.$(`//p[text() = '${member}']`);
   expect(isObject(element.error)).to.equal(true);
 });
-
-
