@@ -352,6 +352,22 @@ When("I confirm delete-member", async function () {
   return await element.click();
 });
 
+When("I take member-edit screenshot1", async function () {
+  await this.driver.saveScreenshot('./screenshots/member/edit/new-member-screen.png');
+});
+
+When("I take member-edit screenshot2", async function () {
+  await this.driver.saveScreenshot('./screenshots/member/edit/list-member-created-screen.png');
+});
+
+When("I take member-edit screenshot3", async function () {
+  await this.driver.saveScreenshot('./screenshots/member/edit/edit-member-screen.png');
+});
+
+When("I take member-edit screenshot4", async function () {
+  await this.driver.saveScreenshot('./screenshots/member/edit/edited-member-screen.png');
+});
+
 Then('I assert member eliminado {string} exists', async function (member) {
   let element = await this.driver.$(`//p[text() = '${member}']`);
   expect(isObject(element.error)).to.equal(true);
