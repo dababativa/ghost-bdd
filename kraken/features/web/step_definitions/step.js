@@ -199,6 +199,10 @@ When("I click members", async function () {
   return await element.click();
 });
 
+When("I take member screenshot1", async function () {
+  await this.driver.saveScreenshot('./screenshots/member/create/list-members-screen.png');
+});
+
 When("I click new-member", async function () {
   let element = await this.driver.$("a[href='#/members/new/'].ember-view.gh-btn.gh-btn-primary");
   return await element.click();
@@ -236,9 +240,17 @@ When("I enter member-note {kraken-string}", async function (label) {
   }
 });
 
+When("I take member screenshot2", async function () {
+  await this.driver.saveScreenshot('./screenshots/member/create/new-member-screen.png');
+});
+
 When("I click save-member", async function () {
   let element = await this.driver.$("button.gh-btn.gh-btn-primary.gh-btn-icon.ember-view");
   return await element.click();
+});
+
+When("I take member screenshot3", async function () {
+  await this.driver.saveScreenshot('./screenshots/member/create/new-member-created-screen.png');
 });
 
 When("I click recent-member", async function () {
