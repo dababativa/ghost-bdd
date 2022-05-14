@@ -199,7 +199,7 @@ When("I click members", async function () {
   return await element.click();
 });
 
-When("I take member screenshot1", async function () {
+When("I take member-create screenshot1", async function () {
   await this.driver.saveScreenshot('./screenshots/member/create/list-members-screen.png');
 });
 
@@ -240,7 +240,7 @@ When("I enter member-note {kraken-string}", async function (label) {
   }
 });
 
-When("I take member screenshot2", async function () {
+When("I take member-create screenshot2", async function () {
   await this.driver.saveScreenshot('./screenshots/member/create/new-member-screen.png');
 });
 
@@ -249,7 +249,7 @@ When("I click save-member", async function () {
   return await element.click();
 });
 
-When("I take member screenshot3", async function () {
+When("I take member-create screenshot3", async function () {
   await this.driver.saveScreenshot('./screenshots/member/create/new-member-created-screen.png');
 });
 
@@ -282,5 +282,3 @@ Then('I assert member eliminado {string} exists', async function (member) {
   let element = await this.driver.$(`//p[text() = '${member}']`);
   expect(isObject(element.error)).to.equal(true);
 });
-
-
