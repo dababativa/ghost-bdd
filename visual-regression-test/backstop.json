@@ -12,8 +12,8 @@
   "scenarios": [
     {
       "label": "login",
-      "url": "./screenshots/login/a.png",
-      "referenceUrl": "./screenshots/login/b.png",
+      "url": "./screenshots/login/login-screen-3.42.png",
+      "referenceUrl": "./screenshots/login/login-screen-4.42.png",
       "readyEvent": "",
       "readySelector": "",
       "delay": 0,
@@ -29,9 +29,9 @@
       "requireSameDimensions": true
     },
     {
-      "label": "post 1",
-      "url": "./screenshots/post/c.png",
-      "referenceUrl": "./screenshots/post/d.png",
+      "label": "members",
+      "url": "./screenshots/members/new-member3.42.png",
+      "referenceUrl": "./screenshots/members/new-member4.42.png",
       "readyEvent": "",
       "readySelector": "",
       "delay": 0,
@@ -47,7 +47,7 @@
       "requireSameDimensions": true
     },
     {
-      "label": "post 2",
+      "label": "post",
       "url": "./screenshots/post/c.png",
       "referenceUrl": "./screenshots/post/d.png",
       "readyEvent": "",
