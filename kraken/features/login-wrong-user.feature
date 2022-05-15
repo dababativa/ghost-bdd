@@ -10,5 +10,6 @@ Scenario: Se incia sesion con un usuario no registrado
   And I wait for 2 seconds
   And I click next
   And I wait for 2 seconds
+  And I take a login Screenshot "login-screen3"
   And I assert error message "There is no user with that email address."
   And I wait for 7 seconds

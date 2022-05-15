@@ -12,6 +12,8 @@ Scenario: Se crea un nuevo post
   Then I wait for 7 seconds
   And I click posts
   And I wait for 2 seconds
+  And I take a post Screenshot "schedule/1-post-list"
+  And I wait for 2 seconds
   And I click new post
   And I wait for 2 seconds
   And I type a title "Post para programar"
@@ -20,17 +22,27 @@ Scenario: Se crea un nuevo post
   And I wait for 2 seconds
   And I click to publish
   And I wait for 2 seconds
+  And I take a post Screenshot "schedule/2-post-to-publish"
+  And I wait for 2 seconds
   And I open calendar
   And I wait for 2 seconds
   And I select a date
+  And I wait for 2 seconds
+  And I take a post Screenshot "schedule/3-post-date"
   And I wait for 2 seconds
   And I publish the post
   And I wait for 2 seconds
   And I click confirm
   And I wait for 2 seconds
+  And I take a post Screenshot "schedule/4-post-schediled"
+  And I wait for 2 seconds
   And I back to posts list
+  And I wait for 2 seconds
+  And I take a post Screenshot "schedule/5-post-list"
   And I wait for 3 seconds
   And I click scheduled
+  And I wait for 2 seconds
+  And I take a post Screenshot "schedule/6-post-sceduled-list"
   And I wait for 2 seconds
   And I assert post "Post para programar" exist
   And I wait for 5 seconds

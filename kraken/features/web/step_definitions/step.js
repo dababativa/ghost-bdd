@@ -1,17 +1,9 @@
 const { Given, When, Then } = require("@cucumber/cucumber");
 const { isObject } = require("lodash");
 const expect = require("chai").expect;
-// When("I enter email {kraken-string}", async function (email) {
-//   let element = await this.driver.$("#email");
 
-//   return await element.setValue(email);
-// });
+//Login
 
-// When("I enter password {kraken-string}", async function (password) {
-//   let element = await this.driver.$("#pass");
-
-//   return await element.setValue(password);
-// });
 let version = undefined;
 Given("I am using version {kraken-string}", async function (ghostVersion) {
   version = ghostVersion;
@@ -34,6 +26,12 @@ When("I enter password {kraken-string}", async function (password) {
   return await element.setValue(password);
 });
 
+Then("I assert wrong password error message", async function () {
+  let element = await this.driver.$("p.main-error");
+  const elementText = await element.getText();
+  expect(elementText.includes("Your password is incorrect.")).to.equal(true);
+});
+
 When("I take Screenshot1", async function () {
   await this.driver.saveScreenshot("./screenshots/login/login-screen1.png");
 });
@@ -49,6 +47,11 @@ When("I click next", async function () {
 
 When("I take Screenshot2", async function () {
   await this.driver.saveScreenshot("./screenshots/login/login-screen2.png");
+});
+
+Then("I take a login Screenshot {string}", async function (imgName) {
+  let path = `./screenshots/login/${await imgName}.png`;
+  return await this.driver.saveScreenshot(path);
 });
 
 Then("I click on the first conversation", async function () {
@@ -72,6 +75,8 @@ Then("I send the message", async function () {
 
   return await element.click();
 });
+
+//Tags
 
 Then("I click tags", async function () {
   let element = await this.driver.$('a[href="#/tags/"]');
@@ -140,6 +145,19 @@ Then("I click internal tags", async function () {
   return await element.click();
 });
 
+
+Then("I assert tag with slug {string} does not exist", async function (slug) {
+  let element = await this.driver.$(`a[href="#/tags/${slug}/"]`);
+  expect(isObject(element.error)).to.equal(true);
+});
+
+Then("I assert tag with slug {string} exists", async function (slug) {
+  let element = await this.driver.$(`a[href="#/tags/${slug}/"]`);
+  expect(element.error == undefined).to.equal(true);
+});
+
+//Post
+
 Then("I click posts", async function () {
   let element = await this.driver.$('a[href="#/posts/"]');
   return await element.click();
@@ -191,6 +209,7 @@ Then("I confirm delete", async function () {
   let element = await this.driver.$(".gh-btn-red");
   return await element.click();
 });
+
 Then("I open calendar", async function () {
   let element = await this.driver.$(".gh-date-time-picker-date ");
   return await element.click();
@@ -204,21 +223,41 @@ Then("I click scheduled", async function () {
   return await element.click();
 });
 
-Then("I assert wrong password error message", async function () {
-  let element = await this.driver.$("p.main-error");
+Then("I take a post Screenshot {string}", async function (imgName) {
+  let path = `./screenshots/posts/${await imgName}.png`;
+  return await this.driver.saveScreenshot(path);
+});
+Then('I assert post with title {string} exists', async function (postTitle) {
+  let element = await this.driver.$('h1.article-title');
   const elementText = await element.getText();
-  expect(elementText.includes("Your password is incorrect.")).to.equal(true);
-});
+  expect(elementText == postTitle).to.equal(true);
+})
 
-Then("I assert tag with slug {string} does not exist", async function (slug) {
-  let element = await this.driver.$(`a[href="#/tags/${slug}/"]`);
-  expect(isObject(element.error)).to.equal(true);
-});
-
-Then("I assert tag with slug {string} exists", async function (slug) {
-  let element = await this.driver.$(`a[href="#/tags/${slug}/"]`);
-  expect(element.error == undefined).to.equal(true);
-});
+Then('I assert post does no exist', async function () {
+  let element = await this.driver.$('.error-code');
+  const elementText = await element.getText();
+  console.log("Texto2 "+elementText);
+  expect(elementText.includes(404)).to.equal(true);
+})
+Then('I assert post {string} exist', async function (postTitle) {
+  let element = await this.driver.$('.gh-content-entry-title=Post para programar');
+  const elementText = await element.getText();
+  console.log(elementText);
+  expect(postTitle==elementText).to.equal(true);
+})
+Then('I assert post was edited with {string}', async function (postNameNew) {
+  let element = await this.driver.$('textarea[placeholder="Post title"]');
+  const elementText = await element.getText();
+  console.log(elementText);
+  expect(elementText==postNameNew).to.equal(false);
+})
+Then('I assert error message {string}', async function (errorText) {
+  let element = await this.driver.$('.main-error');
+  const elementText = await element.getText();
+  console.log("Texto1 "+errorText);
+  console.log("Texto2 "+elementText);
+  expect(elementText.includes(errorText)).to.equal(true);
+})
 
 // Pages
 
