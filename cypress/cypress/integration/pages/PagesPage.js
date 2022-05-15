@@ -98,6 +98,10 @@ export default class PagesPage {
     clickUnpublishRadioButton() {
         return this.getUnpublishRadioButton().click()
     }
+
+    takeScreenshot(screenshotName) {
+        return cy.screenshot(`${screenshotName}`)
+    }
     
     assertPageWithPageNameExists(pageName) {
         expect(cy.get('h3').contains(pageName)).to.exist
