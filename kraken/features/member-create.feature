@@ -2,7 +2,8 @@ Feature: Crear Members
 
 @user1 @web
 Scenario: Como usuario inicio sesion en el admin de ghost y creo un miembro en el sistema
-  Given I navigate to page "http://localhost:2368/ghost/#/signin"
+  Given I am using version "<VERSION>"
+  And I navigate to ghost on port "<GHOST_PORT>"
   And I wait for 5 seconds
   When I enter email "<USERNAME1>"
   And I wait for 1 seconds
@@ -10,6 +11,12 @@ Scenario: Como usuario inicio sesion en el admin de ghost y creo un miembro en e
   And I wait for 1 seconds
   And I click next
   Then I wait for 5 seconds
+  And I enable members1
+  And I wait for 4 seconds
+  And I enable members2
+  And I wait for 4 seconds
+  And I enable members3
+  And I wait for 4 seconds
   And I click members
   And I take member-create screenshot1
   Then I wait for 1 seconds
@@ -28,7 +35,9 @@ Scenario: Como usuario inicio sesion en el admin de ghost y creo un miembro en e
   Then I wait for 1 seconds
   And I click save-member
   Then I wait for 5 seconds
-  And I click members
-  And I take member-create screenshot3
-  Then I wait for 1 seconds
+  And I enable members1
+  And I wait for 4 seconds
+  And I enable members2
+  And I wait for 4 seconds
+  And I enable members3
   And I wait for 5 seconds
