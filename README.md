@@ -27,8 +27,6 @@ Para poder ejecutar estas pruebas de la mejor manera posible se recomienda cumpl
 5. [Descripción de escenarios de pruebas de regresión visual](#descripción-de-escenarios-de-pruebas-de-regresión-visual)
 6. [Pros & Contras Cypress](#pros--contras-cypress)
 7. [Pros & Contras Kraken](#pros--contras-kraken)
-8. [Pros & Contras ResembleJS](#pros--contras-resemblejs)
-9. [Pros & Contras BackstopJS](#pros--contras-backstopjs)
 
 ## Guía de instalación
 Abra una consola de comandos donde desee clonar el repositorio y escriba los siguientes comandos
@@ -218,17 +216,3 @@ A continuación se detallan los escenarios de prueba para la regresión visual. 
 - Hace falta un foro o más espacios de soporte
 - Su sintaxis genera inconsistencias ya que dada la falta de documentación no es facil detectar en que punto la prueba puede estar mal escrita o si falta alguna dependencia o librería para ejecutar
 
-## Pros & Contras ResembleJS
-### Pros
-- Permite el total manejo de como sucede la prueba de regresión visual
-
-### Contras
-- No viene con instrucciones para la generación de un reporte genérico 
-
-## Pros & Contras BackstopJS
-### Pros
-- Permite la creación de un reporte HTML como resultado de forma rápida y sencilla
-
-
-### Contras
-- Puede ser complicado intentar modificar el flujo de la prueba dado que es una herramienta menos flexible al cambio
