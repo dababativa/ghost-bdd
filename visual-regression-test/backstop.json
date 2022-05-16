@@ -47,9 +47,9 @@
       "requireSameDimensions": true
     },
     {
-      "label": "post",
-      "url": "./screenshots/post/c.png",
-      "referenceUrl": "./screenshots/post/d.png",
+      "label": "post creation part 1",
+      "url": "./screenshots/post/2-post-to-create-3-42.png",
+      "referenceUrl": "./screenshots/post/2-post-to-create-4-42.png",
       "readyEvent": "",
       "readySelector": "",
       "delay": 0,
@@ -65,9 +65,9 @@
       "requireSameDimensions": true
     },
     {
-      "label": "pages",
-      "url": "./screenshots/pages/c.png",
-      "referenceUrl": "./screenshots/past/d.png",
+      "label": "post creation part 2",
+      "url": "./screenshots/pages/5-post-created-3-42.png",
+      "referenceUrl": "./screenshots/past/5-post-created-4-42.png",
       "readyEvent": "",
       "readySelector": "",
       "delay": 0,
