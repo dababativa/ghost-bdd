@@ -47,6 +47,24 @@
       "requireSameDimensions": true
     },
     {
+      "label": "members",
+      "url": "./screenshots/pages/ghost-4-42-delete-page-step-4.png",
+      "referenceUrl": "./screenshots/pages/ghost-3-42-delete-page-step-4.png",
+      "readyEvent": "",
+      "readySelector": "",
+      "delay": 0,
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "hoverSelector": "",
+      "clickSelector": "",
+      "postInteractionWait": 1,
+      "selectors": [],
+      "selectorExpansion": true,
+      "expect": 0,
+      "misMatchThreshold" : 0.1,
+      "requireSameDimensions": true
+    },
+    {
       "label": "post creation part 1",
       "url": "./screenshots/post/2-post-to-create-3-42.png",
       "referenceUrl": "./screenshots/post/2-post-to-create-4-42.png",
