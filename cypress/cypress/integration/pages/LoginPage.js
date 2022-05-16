@@ -1,28 +1,34 @@
+var version = Cypress.env('ghost_version');
 export default class LoginPage {
-  constructor() {}
 
-  getEmailInput() {
-    return cy.get("input.email.ember-text-field");
-  }
-  getPasswordInput() {
-    return cy.get("input.password.ember-text-field");
-  }
-  getLoginButton() {
-    return cy.get("button[type='submit']");
-  }
-  typeEmail(email) {
-    return this.getEmailInput().type(email);
-  }
-  typePassword(password) {
-    return this.getPasswordInput().type(password);
-  }
-  clickLoginButton() {
-    return this.getLoginButton().click();
-  }
+    constructor() {      
+    }
 
-  login(email, password) {
-    this.typeEmail(email);
-    this.typePassword(password);
-    this.clickLoginButton();
-  }
+    getEmailInput() {      
+        const selector = version == '4.42' ? 'input.email.ember-text-field' : 'input.email.ember-text-field.gh-input.ember-view'
+        return cy.get(selector)
+    }
+    getPasswordInput() {
+        const selector = version == '4.42' ? 'input.password.ember-text-field' : 'input.password.ember-text-field.gh-input.ember-view'
+        return cy.get(selector)
+    }
+    getLoginButton() {
+        const selector = version == '4.42' ? 'button.login.gh-btn.gh-btn-login.gh-btn-block.gh-btn-icon.js-login-button.ember-view' : 'button.login.gh-btn.gh-btn-blue.gh-btn-block.gh-btn-icon.ember-view'
+        return cy.get(selector)
+    }
+    typeEmail(email) {
+        return this.getEmailInput().focus().blur().type(email)
+    }
+    typePassword(password) {
+        return this.getPasswordInput().type(password)
+    }
+    clickLoginButton() {
+        return this.getLoginButton().click()
+    }
+
+    login(email, password) {
+        this.typeEmail(email);
+        this.typePassword(password);
+        this.clickLoginButton();
+    }
 }
