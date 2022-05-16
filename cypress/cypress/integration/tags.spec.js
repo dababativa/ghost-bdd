@@ -31,6 +31,7 @@ describe("Tags functionalities", () => {
     cy.screenshot("create-tag-initial-screen-4.42");
     self.tagsPage.clickCreateTagButton();
     cy.wait(1000);
+    cy.screenshot("create-tag-inputs-screen-4.42");
     self.tagsPage.typeTagName("New tag name");
     cy.wait(1000);
     self.tagsPage.typeTagSlug("newTagSlug");
@@ -38,7 +39,6 @@ describe("Tags functionalities", () => {
     self.tagsPage.typeTagDescription(
       "This is the description of a new tag created using cypress"
     );
-    cy.screenshot("create-tag-inputs-screen-4.42");
     cy.wait(1000);
     self.tagsPage.clickSaveTagButton();
     // cy.screenshot('create-tag-saved-screen-4.42')
