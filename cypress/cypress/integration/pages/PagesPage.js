@@ -4,7 +4,7 @@ export default class PagesPage {
     }
 
     getPageSectionButton() {
-        return cy.get('#ember28')
+        return cy.get('a[href="#/pages/"]')
     }
 
     clickPageSectionButton() {
@@ -12,7 +12,7 @@ export default class PagesPage {
     }
     
     getNewPageButton() {
-        return cy.get('.view-actions > a')
+        return cy.get('a[href="#/editor/page/"]')
     }
     
     clickNewPageButton() {
@@ -20,23 +20,31 @@ export default class PagesPage {
     }
     
     getPageNameInput() {
-        return cy.get('textarea')
+        return cy.get('textarea.gh-editor-title')
+    }
+    
+    clearPageName() {
+    	this.getPageNameInput().clear()
     }
     
     typePageName(pageName) {
-        return this.getPageNameInput().type(`{selectAll}${pageName}`)
+        return this.getPageNameInput().type(`${pageName}`)
     }
     
     getPageTextInput() {
-        return cy.get('div.koenig-editor__editor-wrapper')
+        return cy.get('div.koenig-editor__editor')
+    }
+    
+    clearPageText() {
+    	this.getPageTextInput().clear()
     }
     
     typePageText(pageText) {
-        return this.getPageTextInput().type(`{selectAll}${pageText}`)
+        return this.getPageTextInput().type(`${pageText}`)
     }
     
     getPublishMenu() {
-    	return cy.get('div.ember-view span')
+    	return cy.get('div.gh-publishmenu span').first()
     }
     
     clickPublishMenu() {
@@ -51,28 +59,28 @@ export default class PagesPage {
         return this.getPublishButton().click()
     }
     
-    getReturnPagesSectionButton() {
-    	return cy.get('div.ml3 > a')
-    }
-    
-    clickReturnPagesSectionButton() {
-        return this.getReturnPagesSectionButton().click()
-    }
-    
     getFirstPageItem() {
-    	return cy.get('li.gh-posts-list-item > a').first()
+    	return cy.get('li.gh-posts-list-item > a.ember-view.permalink.gh-list-data.gh-post-list-title').first()
     }
     
     clickFirstPageItem() {
         return this.getFirstPageItem().click()
     }
     
-    getPageMenu() {
+    getPageMenuNew() {
     	return cy.get('.settings-menu-toggle > span')
     }
+
+    getPageMenuOld() {
+    	return cy.get('.post-settings > svg')
+    }
     
-    clickPageMenu() {
-        return this.getPageMenu().click()
+    clickPageMenuNew() {
+        return this.getPageMenuNew().click()
+    }
+
+    clickPageMenuOld() {
+        return this.getPageMenuOld().click()
     }
     
     getPageDeleteButton() {
@@ -84,7 +92,7 @@ export default class PagesPage {
     }
     
     getConfirmDeleteButton() {
-    	return cy.get('.gh-btn-red > span')
+    	return cy.get('button.gh-btn-red > span')
     }
     
     clickConfirmDeleteButton() {
@@ -103,16 +111,20 @@ export default class PagesPage {
         return cy.screenshot(`${screenshotName}`)
     }
     
-    assertPageWithPageNameExists(pageName) {
-        expect(cy.get('h3').contains(pageName)).to.exist
+    visitPage(pageTitle) {
+    	cy.visit(`http://localhost:2368/${pageTitle}`, {failOnStatusCode: false})
     }
     
-    assertPageWithPageNameNotExists(pageName) {
-        return cy.get('h3').contains(pageName).should('not.exist')
+    assertPageExistsNew(pageName) {
+        return expect(cy.get('h1.article-title').contains(pageName)).to.exist
+    }
+
+    assertPageExistsOld(pageName) {
+        return expect(cy.get('h1.post-full-title').contains(pageName)).to.exist
     }
     
-    assertUnpublishedPageExists() {
-        expect(cy.get('span.gh-badge-pink').contains('Draft')).to.exist
+    assertPageNotExists() {
+        return expect(cy.get('h1.error-code').contains('404')).to.exist
     }
 
 }
