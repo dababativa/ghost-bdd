@@ -165,6 +165,7 @@ A continuación se detallan los escenarios de prueba para cada una de las funcio
 ## Descripción de escenarios de pruebas de regresión visual
 
 A continuación se detallan los escenarios de prueba para la regresión visual. Estas funcionalidades fueron adaptadas a ambas versiones de Ghost bajo pruebas (3.42 y 4.42):
+
 **_NOTA:_** Todas las pruebas de la sección anterior fueron adaptadas para la toma de screenshots pero solamente las siguientes pruebas fueron adaptadas para le ejecución de pruebas en ambas versiones de Ghost
 
 ### Login
