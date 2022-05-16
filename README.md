@@ -85,6 +85,28 @@ A continuación se detallan las funcionalidades que se tomaron como base para la
 - Manejo de páginas: Esta funcionalidad abarca los procesos de gestión de páginas por parte de usuarios administradores.
 - Manejo de miembros: Esta funcionalidad está relacionada con el manejo de usuario colaboradores o miembros de la administración de la página.
 
+## Guía de Backstop
+En esta sección se presentará una corta guía de como utilizar backstop js para la generación del reporte HTML con las diferencias entre las versiones de Ghost.
+
+Primero se debe instalar backstop de manera global en su máquina.
+```
+npm install -g backstopjs
+```
+Inicialice un proyecto de Backstop
+```
+backstop init
+```
+Copie y pegue el archivo backstop.json y la carpeta screenshots en la raíz del proyecto que acaba de crear
+
+Ejecuté el comando
+```
+backstop reference
+```
+Y luego para ejecutar las comparaciones ejecute el comando
+```
+backstop test
+```
+
 ## Descripción de escenarios de prueba
 
 A continuación se detallan los escenarios de prueba para cada una de las funcionalidades descritas anteriormente:
