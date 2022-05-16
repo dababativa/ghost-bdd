@@ -15,6 +15,9 @@ Para poder ejecutar estas pruebas de la mejor manera posible se recomienda cumpl
 - Instalar Cypress a nivel global en su máquina
 - Crear los archivos cypress.env.json y properties.json como se indica en la guía de instalación de cada herramienta
 
+Indice
+1. [Guía de instalación](## Guía de instalación)
+
 ## Guía de instalación
 Abra una consola de comandos donde desee clonar el repositorio y escriba los siguientes comandos
 
