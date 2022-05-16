@@ -47,27 +47,9 @@
       "requireSameDimensions": true
     },
     {
-      "label": "pages 1",
+      "label": "pages",
       "url": "./screenshots/pages/ghost-4-42-delete-page-step-4.png",
       "referenceUrl": "./screenshots/pages/ghost-3-42-delete-page-step-4.png",
-      "readyEvent": "",
-      "readySelector": "",
-      "delay": 0,
-      "hideSelectors": [],
-      "removeSelectors": [],
-      "hoverSelector": "",
-      "clickSelector": "",
-      "postInteractionWait": 1,
-      "selectors": [],
-      "selectorExpansion": true,
-      "expect": 0,
-      "misMatchThreshold" : 0.1,
-      "requireSameDimensions": true
-    },
-    {
-      "label": "pages 2",
-      "url": "./screenshots/pages/ghost-4-42-publish-page-step-4.png",
-      "referenceUrl": "./screenshots/pages/ghost-3-42-publish-page-step-4.png",
       "readyEvent": "",
       "readySelector": "",
       "delay": 0,
