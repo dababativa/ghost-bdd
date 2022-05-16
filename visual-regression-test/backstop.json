@@ -84,8 +84,8 @@
     },
     {
       "label": "post creation part 2",
-      "url": "./screenshots/pages/5-post-created-3-42.png",
-      "referenceUrl": "./screenshots/past/5-post-created-4-42.png",
+      "url": "./screenshots/post/5-post-created-3-42.png",
+      "referenceUrl": "./screenshots/post/5-post-created-4-42.png",
       "readyEvent": "",
       "readySelector": "",
       "delay": 0,
