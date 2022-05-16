@@ -47,7 +47,7 @@
       "requireSameDimensions": true
     },
     {
-      "label": "members",
+      "label": "pages",
       "url": "./screenshots/pages/ghost-4-42-delete-page-step-4.png",
       "referenceUrl": "./screenshots/pages/ghost-3-42-delete-page-step-4.png",
       "readyEvent": "",
