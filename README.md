@@ -104,7 +104,7 @@ backstop init
 ```
 Copie y pegue el archivo backstop.json y la carpeta screenshots en la raíz del proyecto que acaba de crear
 
-Ejecuté el comando
+Asegurese de estar en la carpeta raíz del proyecto backstop y ejecuté el comando
 ```
 backstop reference
 ```
