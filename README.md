@@ -15,8 +15,15 @@ Para poder ejecutar estas pruebas de la mejor manera posible se recomienda cumpl
 - Instalar Cypress a nivel global en su máquina
 - Crear los archivos cypress.env.json y properties.json como se indica en la guía de instalación de cada herramienta
 
-Indice
-1. [Guía de instalación](## Guía de instalación)
+## Indice
+1. [Guía de instalación](#guía-de-instalación)
+   - [Cypress](#cypress)
+   - [Kraken](#kraken)
+2. [Descripción de funcionalidades](#descripción-de-funcionalidades)
+3. [Guía de Backstop](#guía-de-backstop)
+4. [Descripción de escenarios de prueba](#descripción-de-escenarios-de-prueba)
+5. [Pros & Contras Cypress](#pros--contras-cypress)
+5. [Pros & Contras Kraken](#pros--contras-kraken)
 
 ## Guía de instalación
 Abra una consola de comandos donde desee clonar el repositorio y escriba los siguientes comandos
@@ -163,7 +170,7 @@ A continuación se detallan los escenarios de prueba para cada una de las funcio
 - La descripción de algunos issues no es clara y es muy genérica otras veces
 - Hace falta un mejor manejo de excepciones
 
-## Pros y Contras Kraken
+## Pros & Contras Kraken
 ### Pros
 - Es una herramienta versatil que permite la creación de escenarios usando la premisa Given When Then
 - Permite realizar pruebas en diferentes tipos de aplicaciones
