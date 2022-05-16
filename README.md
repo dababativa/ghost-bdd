@@ -22,10 +22,11 @@ Para poder ejecutar estas pruebas de la mejor manera posible se recomienda cumpl
 2. [Guía de Backstop](#guía-de-backstop)
 3. [Descripción de funcionalidades](#descripción-de-funcionalidades)
 4. [Descripción de escenarios de prueba](#descripción-de-escenarios-de-prueba)
-5. [Pros & Contras Cypress](#pros--contras-cypress)
-6. [Pros & Contras Kraken](#pros--contras-kraken)
-7. [Pros & Contras ResembleJS](#pros--contras-resemblejs)
-8. [Pros & Contras BackstopJS](#pros--contras-backstopjs)
+5. [Descripción de escenarios de pruebas de regresión visual](#descripción-de-escenarios-de-pruebas-de-regresión-visual)
+6. [Pros & Contras Cypress](#pros--contras-cypress)
+7. [Pros & Contras Kraken](#pros--contras-kraken)
+8. [Pros & Contras ResembleJS](#pros--contras-resemblejs)
+9. [Pros & Contras BackstopJS](#pros--contras-backstopjs)
 
 ## Guía de instalación
 Abra una consola de comandos donde desee clonar el repositorio y escriba los siguientes comandos
@@ -126,7 +127,7 @@ A continuación se detallan las funcionalidades que se tomaron como base para la
 A continuación se detallan los escenarios de prueba para cada una de las funcionalidades descritas anteriormente:
 
 ### Login
-- Iniciar Sesión: El usuario inicia sesión con un usuario y contraseña previamente registrado en el sistema de ghost:
+- Iniciar Sesión: El usuario inicia sesión con un usuario y contraseña previamente registrado en el sistema de ghost.
 - Iniciar Sesión con usuario inexistente: Se inicia sesión en el sistema de ghost con un usuario que no se encuentra previamente registrado.
 - Iniciar Sesión con credenciales equivocadas: Se inicia sesioón con usuario existente pero con contraseña invalida.
 - Olvidé mi contraseña: Proceso para restauración de contraseña de un usuario previamente registrado.
@@ -160,6 +161,33 @@ A continuación se detallan los escenarios de prueba para cada una de las funcio
 - Editar: Se realiza la creación de un nuevo miembro, se guarda y posteriormente se realiza edita la información y se guarda de nuevo para que quede publicado.
 - Eliminar: Se realiza la creación de un nuevo miembro. Después se busca este miembro en la lista, se abre y se elimina. Se valida que el miembro ya no aparezca en la lista de los miembros.
 - Ver: Se realiza la creación de un nuevo miembro. Después se busca este miembro en la lista y se accede a su información.
+
+## Descripción de escenarios de pruebas de regresión visual
+
+A continuación se detallan los escenarios de prueba para la regresión visual. Estas funcionalidades fueron adaptadas a ambas versiones de Ghost bajo pruebas (3.42 y 4.42):
+**_NOTA:_** Todas las pruebas de la sección anterior fueron adaptadas para la toma de screenshots pero solamente las siguientes pruebas fueron adaptadas para le ejecución de pruebas en ambas versiones de Ghost
+
+### Login
+- Iniciar Sesión: El usuario inicia sesión con un usuario y contraseña previamente registrado en el sistema de ghost
+
+### Manejo de posts 
+- Crear post: Se genera la creación de un nuevo post en el sistema y se realiza la publicación del mismo.
+
+### Manejo de tags 
+- Crear: Se crea un nuevo tag en ghost y se valida que este aparezca en la lista
+- Editar: Se realiza la creación de un nuevo tag en ghost, posteriormente se regresa a la lsita de tags, se abré el tag, se edita y actualiza. Se valida que este tag aparezca con la información actualizada en la lista y no con la previa
+
+**_NOTA:_** Es necesario borrar cualquier tag que haya sigo creado como parte del proceso de pruebas para que estas tengan el mejor funcionamiento. Cuando se ejecutan estas pruebs en Cypress el mismo script de pruebas se encarga de borrar todos los tags previamente, en el caso de Kraken este proceso se debe realizar manualmente.
+
+**_NOTA:_** La eliminación de tags internos presenta un bug que ha sido reportado en el repositorio con las incidencias encontradas, debido a esto el proceso de eliminiación de tags internos debe realizarse manualmente antes de cada prueba
+
+### Manejo de páginas
+- Crear: Se crea una nueva página en ghost y se corrobora que aparezca en el listado de páginas.
+
+**_NOTA:_** Es necesario borrar cualquier página que haya sido creada como parte del proceso de pruebas para que estas tengan el mejor funcionamiento. Este proceso se dene ejecutar de manera manual.
+
+### Manejo de miembros
+- Crear: Se genera la creación de un nuevo miembro en el sistema y guarda la información para que quede publicado.
 
 ## Pros & Contras Cypress
 ### Pros
