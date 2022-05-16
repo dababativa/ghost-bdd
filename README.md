@@ -11,9 +11,11 @@ Desarrollado por:
 Para poder ejecutar estas pruebas de la mejor manera posible se recomienda cumplir con los siguientes puntos
 - Correr Ghost localmente en el puerto 2368
 - Correr la versión 4.42.0 de Ghost (para esta versión fueron diseñadas las pruebas y es posible que estas no funcionen correctamente en otra versión)
+- Correr la versión 3.42.0 de Ghost para las pruebas especificas en la descripción de escenarios de pruebas de regresión lineal
 - Instalar Kraken a nivel global en su máquina
 - Instalar Cypress a nivel global en su máquina
-- Crear los archivos cypress.env.json y properties.json como se indica en la guía de instalación de cada herramienta
+- Crear los archivos cypress.env.json y properties.json como se indica en la guía de instalación de cada herramienta. En ambos archivos debe de agregar información de la versión y el puerto en el que se esté corriendo Ghost para que las pruebas puedan funcionar de manera correcta. (Nota: solamente se tendrá en cuenta esta información para las pruebas que han sido adaptadas para ambas versiones)
+- Instalar BackstopJS a nivel global en su máquina
 
 ## Indice
 1. [Guía de instalación](#guía-de-instalación)
