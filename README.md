@@ -183,7 +183,8 @@ A continuación se detallan los escenarios de prueba para la regresión visual. 
 **_NOTA:_** La eliminación de tags internos presenta un bug que ha sido reportado en el repositorio con las incidencias encontradas, debido a esto el proceso de eliminiación de tags internos debe realizarse manualmente antes de cada prueba
 
 ### Manejo de páginas
-- Crear: Se crea una nueva página en ghost y se corrobora que aparezca en el listado de páginas.
+- Eliminar: Se crea una nueva página en ghost y luego se elimina y se valida que esta desaparezca en la lista.
+- Despublicar: Se realiza la creación de una nueva página en ghost, posteriormente se despublica. Se valida que esta página no aparezca.
 
 **_NOTA:_** Es necesario borrar cualquier página que haya sido creada como parte del proceso de pruebas para que estas tengan el mejor funcionamiento. Este proceso se dene ejecutar de manera manual.
 
