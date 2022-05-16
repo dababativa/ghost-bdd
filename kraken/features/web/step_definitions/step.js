@@ -168,7 +168,11 @@ Then("I click new post", async function () {
   return await element.click();
 });
 Then("I type a title {string}", async function (titlePost) {
-  let element = await this.driver.$('textarea[placeholder="Post title"]');
+  let selector = 
+    version == 4.42
+      ? 'textarea[placeholder="Post title"]'
+      : 'textarea[placeholder="Post Title"]';
+  let element = await this.driver.$(selector);
   return await element.setValue(titlePost);
 });
 Then("I write a body {string}", async function (titleBody) {
@@ -186,11 +190,13 @@ Then("I publish the post", async function () {
   return await element.click();
 });
 Then("I click confirm", async function () {
-  let element = await this.driver.$(".gh-btn-black");
-  return await element.click();
+  if(version == 4.42){
+    let element = await this.driver.$(".gh-btn-black");
+    return await element.click();
+  }  
 });
 Then("I back to posts list", async function () {
-  let element = await this.driver.$(".gh-editor-back-button");
+  let element = await this.driver.$('a[href="#/posts/"]');
   return await element.click();
 });
 Then("I click a post", async function () {
@@ -198,7 +204,11 @@ Then("I click a post", async function () {
   return await element.click();
 });
 Then("I click settings", async function () {
-  let element = await this.driver.$(".settings-menu-toggle");
+  let selector = 
+  version == 4.42
+    ? '.settings-menu-toggle'
+    : '.post-settings';
+  let element = await this.driver.$(selector);
   return await element.click();
 });
 Then("I delete the post", async function () {
@@ -223,12 +233,31 @@ Then("I click scheduled", async function () {
   return await element.click();
 });
 
+Given("I navigate to post {kraken-string}", async function (post) {
+  let port = 
+    version == 4.42
+      ? "2368"
+      : "3001"
+  this.driver.url(`http://localhost:${port}/${post}`);
+});
+
+Given("I navigate to post list", async function () {
+  let port = 
+    version == 4.42
+      ? "2368"
+      : "3001"
+  this.driver.url(`http://localhost:${port}/ghost/#/posts`);
+});
 Then("I take a post Screenshot {string}", async function (imgName) {
   let path = `./screenshots/posts/${await imgName}.png`;
   return await this.driver.saveScreenshot(path);
 });
 Then('I assert post with title {string} exists', async function (postTitle) {
-  let element = await this.driver.$('h1.article-title');
+  let selector = 
+  version == 4.42
+    ? 'h1.article-title'
+    : 'h1.post-full-title';
+  let element = await this.driver.$(selector);
   const elementText = await element.getText();
   expect(elementText == postTitle).to.equal(true);
 })
@@ -246,7 +275,11 @@ Then('I assert post {string} exist', async function (postTitle) {
   expect(postTitle==elementText).to.equal(true);
 })
 Then('I assert post was edited with {string}', async function (postNameNew) {
-  let element = await this.driver.$('textarea[placeholder="Post title"]');
+  let selector = 
+  version == 4.42
+    ? 'textarea[placeholder="Post title"]'
+    : 'textarea[placeholder="Post Title"]';
+  let element = await this.driver.$(selector);
   const elementText = await element.getText();
   console.log(elementText);
   expect(elementText==postNameNew).to.equal(false);
@@ -334,41 +367,9 @@ Then("I assert 404 error code appears", async function () {
 });
 
 //members
-When("I enable members1", async function () {
-  if (version == "3.42"){
-    let element = await this.driver.$(
-      ".relative>a[href='#/settings/labs/'].ember-view"
-    );
-    return await element.click();
-  }
-});
-
-When("I enable members2", async function () {
-  if (version == "3.42"){
-    let element1 = await this.driver.$(
-      ".gh-setting-action.flex.items-center.midgrey"
-    );
-    return await element1.click();
-  }
-});
-
-When("I enable members3", async function () {
-  if (version == "3.42"){
-    let element = await this.driver.$(
-      ".input-toggle-component"
-    );
-    return await element.click();
-  }
-});
-
 When("I click members", async function () {
-  const selector =
-  version == 4.42
-    ? ".relative>a[href='#/members/'].ember-view"
-    : "li>a[href='#/members/'].ember-view";
-
   let element = await this.driver.$(
-    selector
+    ".relative>a[href='#/members/'].ember-view"
   );
   return await element.click();
 });
@@ -380,13 +381,8 @@ When("I take member-create screenshot1", async function () {
 });
 
 When("I click new-member", async function () {
-  const selector1 =
-  version == 4.42
-    ? "a[href='#/members/new/'].ember-view.gh-btn.gh-btn-primary"
-    : "a[href='#/members/new/'].ember-view.gh-btn.gh-btn-green";
-
   let element = await this.driver.$(
-    selector1
+    "a[href='#/members/new/'].ember-view.gh-btn.gh-btn-primary"
   );
   return await element.click();
 });
@@ -406,15 +402,12 @@ When("I enter member-email {kraken-string}", async function (email) {
 });
 
 When("I enter member-labels {kraken-string}", async function (label) {
-  const selector2 =
-  version == 4.42
-    ? ".ember-power-select-multiple-options>.ember-power-select-trigger-multiple-input"
-    : ".ember-power-select-multiple-options.sortable-objects.ember-view>.ember-power-select-trigger-multiple-input";
-
+  try {
     let element = await this.driver.$(
-      selector2
+      ".ember-power-select-multiple-options>.ember-power-select-trigger-multiple-input"
     );
     return await element.setValue(label + " labels");
+  } catch (error) {}
 });
 
 When("I enter member-note {kraken-string}", async function (label) {
@@ -431,13 +424,8 @@ When("I take member-create screenshot2", async function () {
 });
 
 When("I click save-member", async function () {
-  const selector3 =
-  version == 4.42
-    ? "button.gh-btn.gh-btn-primary.gh-btn-icon.ember-view"
-    : "button.gh-btn.gh-btn-blue.gh-btn-icon.ember-view";
-
   let element = await this.driver.$(
-    selector3
+    "button.gh-btn.gh-btn-primary.gh-btn-icon.ember-view"
   );
   return await element.click();
 });
@@ -449,13 +437,8 @@ When("I take member-create screenshot3", async function () {
 });
 
 When("I click recent-member", async function () {
-  const selector4 =
-  version == 4.42
-    ? ".ma0.pa0.gh-members-list-name:first-child"
-    : ".ma0.pa0.gh-members-list-name:first-child";
-
   let element = await this.driver.$(
-    selector4
+    ".ma0.pa0.gh-members-list-name:first-child"
   );
   return await element.click();
 });
@@ -466,36 +449,24 @@ When("I edit member-note", async function () {
 });
 
 When("I click member-options", async function () {
-  const selector5 =
-  version == 4.42
-    ? ".gh-btn.gh-btn-icon.icon-only.gh-btn-action-icon.closed.ember-view"
-    : ".w-60>.gh-btn.gh-btn-red.gh-btn-icon.mt14";
-
   let element = await this.driver.$(
-    selector5
+    ".gh-btn.gh-btn-icon.icon-only.gh-btn-action-icon.closed.ember-view"
   );
   return await element.click();
 });
 
 When("I click delete-member", async function () {
-  const selector6 =
-  version == 4.42
-    ? "ul.dropdown.gh-member-actions-menu.dropdown-menu.dropdown-triangle-top-right.open.fade-in-scale.open.ember-view>li>button.mr2>span.red"
-    : ".modal-footer>.gh-btn.gh-btn-red.gh-btn-icon.ember-view";
-
   let element = await this.driver.$(
-    selector6
+    "ul.dropdown.gh-member-actions-menu.dropdown-menu.dropdown-triangle-top-right.open.fade-in-scale.open.ember-view>li>button.mr2>span.red"
   );
   return await element.click();
 });
 
 When("I confirm delete-member", async function () {
-  if(version == 4.42){
   let element = await this.driver.$(
     "div.modal-footer>button.gh-btn.gh-btn-red.gh-btn-icon.ember-view"
   );
   return await element.click();
-  }
 });
 
 When("I take member-edit screenshot1", async function () {

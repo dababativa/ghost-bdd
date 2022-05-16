@@ -2,7 +2,8 @@ Feature: Eliminar un post
 
 @user1 @web
 Scenario: Se crea un nuevo post
-  Given I navigate to page "http://localhost:2368/ghost/#/signin"
+  Given I am using version "<VERSION>"
+  And I navigate to ghost on port "<PORT>"
   And I wait for 5 seconds
   When I enter email "<USERNAME1>"
   And I wait for 2 seconds
@@ -27,11 +28,11 @@ Scenario: Se crea un nuevo post
   And I wait for 2 seconds
   And I click confirm
   And I wait for 2 seconds
-  And I navigate to page "http://localhost:2368/Post-de-prueba-2"
+  And I navigate to post "Post-de-prueba-2"
   And I wait for 2 seconds
   And I take a post Screenshot "delete/3-post-exist"
   And I wait for 2 seconds
-  And I navigate to page "http://localhost:2368/ghost/#/posts"
+  And I navigate to post list 
   And I wait for 2 seconds
   And I take a post Screenshot "delete/4-post-list"
   And I wait for 2 seconds
@@ -51,7 +52,7 @@ Scenario: Se crea un nuevo post
   And I wait for 2 seconds
   And I take a post Screenshot "delete/8-post-deleted"
   And I wait for 2 seconds
-  And I navigate to page "http://localhost:2368/Post-de-prueba-2"
+  And I navigate to post "http://localhost:2368/Post-de-prueba-2"
   And I wait for 2 seconds
   And I take a post Screenshot "delete/9-post-not-exist"
   And I wait for 2 seconds

@@ -2,7 +2,8 @@ Feature: Crear un nuevo post
 
 @user1 @web
 Scenario: Se crea un nuevo post
-  Given I navigate to page "http://localhost:2368/ghost/#/signin"
+  Given I am using version "<VERSION>"
+  And I navigate to ghost on port "<PORT>"
   And I wait for 5 seconds
   When I enter email "<USERNAME1>"
   And I wait for 2 seconds

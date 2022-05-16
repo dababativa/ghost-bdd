@@ -2,7 +2,8 @@ Feature: Crear un nuevo post
 
 @user1 @web
 Scenario: Se crea un nuevo post
-  Given I navigate to page "http://localhost:2368/ghost/#/signin"
+  Given I am using version "<VERSION>"
+  And I navigate to ghost on port "<PORT>"
   And I wait for 5 seconds
   When I enter email "<USERNAME1>"
   And I wait for 2 seconds
@@ -34,7 +35,7 @@ Scenario: Se crea un nuevo post
   And I wait for 2 seconds
   And I take a post Screenshot "create/4-post-list-created"
   And I wait for 2 seconds
-  And I navigate to page "http://localhost:2368/Post-de-prueba-1"
+  And I navigate to post "Post-de-prueba-1"
   And I take a post Screenshot "create/5-post-created"
   And I wait for 2 seconds
   And I assert post with title "Post de prueba 1" exists
