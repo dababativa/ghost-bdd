@@ -19,8 +19,8 @@ Para poder ejecutar estas pruebas de la mejor manera posible se recomienda cumpl
 1. [Guía de instalación](#guía-de-instalación)
    - [Cypress](#cypress)
    - [Kraken](#kraken)
-2. [Descripción de funcionalidades](#descripción-de-funcionalidades)
-3. [Guía de Backstop](#guía-de-backstop)
+2. [Guía de Backstop](#guía-de-backstop)
+3. [Descripción de funcionalidades](#descripción-de-funcionalidades)
 4. [Descripción de escenarios de prueba](#descripción-de-escenarios-de-prueba)
 5. [Pros & Contras Cypress](#pros--contras-cypress)
 5. [Pros & Contras Kraken](#pros--contras-kraken)
@@ -86,14 +86,7 @@ El primer comando correra kraken-node desde la nube, el segundo lo correra desde
 
 **_NOTA:_** Para usar Kraken y los comando descritos previamente es recomendado instalar globalmente kraken-node en su computadora
 
-## Descripción de funcionalidades
 
-A continuación se detallan las funcionalidades que se tomaron como base para la realización de cada uno de los escenarios para cada herramienta previamente descrita:
-- Login: Esta funcionalidad abarca todos los procesos relacionados con el login o ingreso de usuarios administradores al sistema.
-- Manejo de posts: Esta funcionalidad abarca los procesos relacionados con la administración de post dentro del sistema.
-- Manejo de tags: Esta funcionalidad abarca los procesos para gestión de tags por parte de los administradores del sistema.
-- Manejo de páginas: Esta funcionalidad abarca los procesos de gestión de páginas por parte de usuarios administradores.
-- Manejo de miembros: Esta funcionalidad está relacionada con el manejo de usuario colaboradores o miembros de la administración de la página.
 
 ## Guía de Backstop
 En esta sección se presentará una corta guía de como utilizar backstop js para la generación del reporte HTML con las diferencias entre las versiones de Ghost.
@@ -116,6 +109,15 @@ Y luego para ejecutar las comparaciones ejecute el comando
 ```
 backstop test
 ```
+
+## Descripción de funcionalidades
+
+A continuación se detallan las funcionalidades que se tomaron como base para la realización de cada uno de los escenarios para cada herramienta previamente descrita:
+- Login: Esta funcionalidad abarca todos los procesos relacionados con el login o ingreso de usuarios administradores al sistema.
+- Manejo de posts: Esta funcionalidad abarca los procesos relacionados con la administración de post dentro del sistema.
+- Manejo de tags: Esta funcionalidad abarca los procesos para gestión de tags por parte de los administradores del sistema.
+- Manejo de páginas: Esta funcionalidad abarca los procesos de gestión de páginas por parte de usuarios administradores.
+- Manejo de miembros: Esta funcionalidad está relacionada con el manejo de usuario colaboradores o miembros de la administración de la página.
 
 ## Descripción de escenarios de prueba
 
