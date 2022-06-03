@@ -14,6 +14,13 @@ export default class TagsPage {
   getTagNameInput() {
     return cy.get('input[name="name"]');
   }
+  getTagColorInput() {
+    return cy.get('input[name="accent-color"][type="text"]');
+  }
+
+  typeTagColor(tagColor) {
+    return this.getTagColorInput().type(`{selectAll}${tagColor}`);
+  }
 
   typeTagName(tagName) {
     return this.getTagNameInput().type(`{selectAll}${tagName}`);
