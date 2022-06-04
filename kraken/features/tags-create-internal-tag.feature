@@ -2,7 +2,8 @@ Feature: Crear tag interno
 
 @user1 @web
 Scenario: Como ususario entro y creo un tag interno
-  Given I navigate to page "http://localhost:2368/ghost/#/signin"
+  Given I am using version "<VERSION>"
+  And I navigate to ghost on port "<GHOST_PORT>"
   And I wait for 5 seconds
   When I enter email "<USERNAME1>"
   And I wait for 2 seconds
