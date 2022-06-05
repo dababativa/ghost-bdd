@@ -2,10 +2,13 @@
 
 Este proyecto permite realizar pruebas desarrolladas buscando cumplir con el paradigma de pruebas BDT.
 
-Desarrollado por:
+Desarrollado por (Semanas 1-6):
 - Felipe Leyva - d.leyvad@uniandes.edu.co
 - Maria Fernanda García - mf.garciam1@uniandes.edu.co
 - Edward Sandoval - e.sandovalh@uniandes.edu.co
+- Daniel Armando Babativa - da.babativa@uniandes.edu.co
+
+Desarrollado por (Semanas 7 y 8):
 - Daniel Armando Babativa - da.babativa@uniandes.edu.co
 
 Para poder ejecutar estas pruebas de la mejor manera posible se recomienda cumplir con los siguientes puntos
@@ -22,11 +25,12 @@ Para poder ejecutar estas pruebas de la mejor manera posible se recomienda cumpl
    - [Cypress](#cypress)
    - [Kraken](#kraken)
 2. [Guía de Backstop](#guía-de-backstop)
-3. [Descripción de funcionalidades](#descripción-de-funcionalidades)
-4. [Descripción de escenarios de prueba](#descripción-de-escenarios-de-prueba)
-5. [Descripción de escenarios de pruebas de regresión visual](#descripción-de-escenarios-de-pruebas-de-regresión-visual)
-6. [Pros & Contras Cypress](#pros--contras-cypress)
-7. [Pros & Contras Kraken](#pros--contras-kraken)
+3. [Guía de Faker](#guía-de-faker)
+4. [Descripción de funcionalidades](#descripción-de-funcionalidades)
+5. [Descripción de escenarios de prueba](#descripción-de-escenarios-de-prueba)
+6. [Descripción de escenarios de pruebas de regresión visual](#descripción-de-escenarios-de-pruebas-de-regresión-visual)
+7. [Pros & Contras Cypress](#pros--contras-cypress)
+8. [Pros & Contras Kraken](#pros--contras-kraken)
 
 ## Guía de instalación
 Abra una consola de comandos donde desee clonar el repositorio y escriba los siguientes comandos
@@ -111,6 +115,20 @@ backstop reference
 Y luego para ejecutar las comparaciones ejecute el comando
 ```
 backstop test
+```
+
+## Guía de Faker
+En esta sección se presentará una corta guía de como instalar FakerJS para la ejecución de las pruebas
+
+Debido a problemas de compatibilidad entre el equipo de computo y la libreria FakerJS el desarrollo de este proyecto se realiza usando una versión antigua de FakerJS la versión 5.5.3 y por lo tanto se debe instalar esta misma versión para asegurar la correcta ejecución de las pruebas.
+
+Para instalar esta versión de FakerJS puede ejecutar uno de dos comandos en la raíz del proyecto
+```
+npm install
+```
+Que instala las dependencias automáticamente o el siguiente comando que instala la versión de manera manual 
+```
+npm i faker@5.5.3
 ```
 
 ## Descripción de funcionalidades
