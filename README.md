@@ -215,6 +215,8 @@ A continuación se detallan los escenarios de prueba para la regresión visual. 
 
 A continuación se detallan los escenarios de prueba con generación de datos. Estas funcionalidades están divididas en tres bloques, A priori, Pseudo, Aleatorias y para cada uno de estos bloques de desarrollaron 10 funcionalidades. A continuación se explica detalladamente
 
+Para ejecutar estas pruebas se debe abrir el proyecto de cypress y ejecutar los archivos, tags-a-priori.spec.js, tags-pseudo.spec.js, y tags-random.spec.js dependiendo de cual estrategia de generación de datos se quiere utilizar.
+
 ### A priori
 Para la generación de datos A priori se decidió utilizar la herramienta Mockaroo que permite genearar miles de objetos siguiendo un esquema de generación para cada atributo de estos objetos. En este caso se decidió utilizar el siguiente esquema
 
