@@ -2,7 +2,7 @@
 
 Este proyecto permite realizar pruebas desarrolladas buscando cumplir con el paradigma de pruebas BDT.
 
-Desarrollado por (Semanas 1-6):
+Desarrollado por (Semanas 1 a 6):
 - Felipe Leyva - d.leyvad@uniandes.edu.co
 - Maria Fernanda García - mf.garciam1@uniandes.edu.co
 - Edward Sandoval - e.sandovalh@uniandes.edu.co
@@ -19,6 +19,7 @@ Para poder ejecutar estas pruebas de la mejor manera posible se recomienda cumpl
 - Instalar Cypress a nivel global en su máquina
 - Crear los archivos cypress.env.json y properties.json como se indica en la guía de instalación de cada herramienta. En ambos archivos debe de agregar información de la versión y el puerto en el que se esté corriendo Ghost para que las pruebas puedan funcionar de manera correcta. (Nota: solamente se tendrá en cuenta esta información para las pruebas que han sido adaptadas para ambas versiones)
 - Instalar BackstopJS a nivel global en su máquina
+- Instalar FakerJS siguiendo la guía presentada en este archivo readme
 
 ## Indice
 1. [Guía de instalación](#guía-de-instalación)
@@ -29,8 +30,9 @@ Para poder ejecutar estas pruebas de la mejor manera posible se recomienda cumpl
 4. [Descripción de funcionalidades](#descripción-de-funcionalidades)
 5. [Descripción de escenarios de prueba](#descripción-de-escenarios-de-prueba)
 6. [Descripción de escenarios de pruebas de regresión visual](#descripción-de-escenarios-de-pruebas-de-regresión-visual)
-7. [Pros & Contras Cypress](#pros--contras-cypress)
-8. [Pros & Contras Kraken](#pros--contras-kraken)
+7. [Descripción de escenarios de pruebas con generación de datos](#descripción-de-escenarios-de-pruebas-con-generación-de-datos)
+8. [Pros & Contras Cypress](#pros--contras-cypress)
+9. [Pros & Contras Kraken](#pros--contras-kraken)
 
 ## Guía de instalación
 Abra una consola de comandos donde desee clonar el repositorio y escriba los siguientes comandos
@@ -208,6 +210,83 @@ A continuación se detallan los escenarios de prueba para la regresión visual. 
 
 ### Manejo de miembros
 - Crear: Se genera la creación de un nuevo miembro en el sistema y guarda la información para que quede publicado.
+
+## Descripción de escenarios de pruebas con generación de datos
+
+A continuación se detallan los escenarios de prueba con generación de datos. Estas funcionalidades están divididas en tres bloques, A priori, Pseudo, Aleatorias y para cada uno de estos bloques de desarrollaron 10 funcionalidades. A continuación se explica detalladamente
+
+### A priori
+Para la generación de datos A priori se decidió utilizar la herramienta Mockaroo que permite genearar miles de objetos siguiendo un esquema de generación para cada atributo de estos objetos. En este caso se decidió utilizar el siguiente esquema
+
+![image](https://user-images.githubusercontent.com/42902488/172065121-5007767e-4e48-4263-8324-79d656c435a1.png)
+
+Donde se están creando objetos tipo Tag con los atributos necesarios y a ser usados durante la ejecución de las pruebas. Utilizando este esquema se crea un archivo JSON el cual se importa durante la ejecución de las pruebas. 
+
+Para ejecutar estas pruebas se debe ejecutar el archivo tags-a-priori.spec.js que ejecuta las siguientes pruebas tanto positivas como negativas
+1. Crear tag bien
+2. Crear tag sin nombre
+3. Crear tag sin slug
+4. Crear tag sin descripcion
+5. Crear tag sin color
+6. Crear tag con nombre extraño
+7. Crear tag con slug raro
+8. Crear tag con color en formato diferente
+9. Editar tag sin color
+10. Editar tag con color en formato diferente
+
+## Pseudo
+Para la generación de pruebas usando esta estretegia de utilizó la librería FakerJS cuya guía de instalación se encuentra [aquí](#guía-de-faker).
+
+Esta libreria se importa dentro del archivo tags-pseudo.spec.js y además de utiliza una semilla que es fija para poder reproducir las pruebas con exactamente los mismos datos generados. En este caso la semilla utilizada es 2062022.
+
+Para ejecutar las pruebas que abarcan esta estrategia se debe ejecutar el archivo tags-pseudo.spec.js que ejecuta las siguientes pruebas tanto positivas como negativas
+
+11. Crear tag con descripción muy larga
+
+12. Crear tag con nombre en el limite
+
+13. Crear tag con slug en el limite
+
+14. Crear tag con descripcion en el limite
+
+15. Crear tag sin nada
+
+16. Editar tag bien
+
+17. Editar tag sin nombre
+
+18. Editar tag sin slug
+
+19. Editar tag sin descripcion
+
+20. Crear tag con nombre muy largo
+
+## Aleatorias
+Nuevamente se usa la librería FakerJS cuya guía de instalación se encuentra [aquí](#guía-de-faker).
+
+Al igual que en pseudo se importa la librería esta vez en un archivo tags-random.spec.js que ejecutas las pruebas con la diferencia que no se usa ninguna semilla para que entonces cada ejecución de las pruebas sea una totalmente diferente a la anterior, aleatorias entre si.
+
+Para ejecutar las pruebas que abarcan esta estrategia se debe ejecutar el archivo tags-random.spec.js que ejecuta las siguientes pruebas tanto positivas como negativas
+
+21. Editar tag con nombre extraño
+
+22. Editar tag con slug raro
+
+23. Crear tag con slug muy largo
+
+24. Editar tag con nombre muy largo
+
+25. Editar tag con slug muy largo
+
+26. Editar tag con descripción muy larga
+
+27. Editar tag con nombre en el limite
+
+28. Editar tag tag con slug en el limite
+
+29. Editar tag con descripcion en el limite
+
+30. Editar tag sin nada
 
 ## Pros & Contras Cypress
 ### Pros
